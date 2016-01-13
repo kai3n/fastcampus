@@ -10,6 +10,7 @@ string1 = "I am a boy"
 string2 = ["I", "am", "a", "boy"]
 string3 = ("I", "am", "a", "boy")
 string4 = {"I" : "am", "a" : "boy"}
+string5 = [1,2,'abc',0.1,'efd']
 
 def search(string, word_or_character):
     if type(string) == str:
@@ -19,7 +20,7 @@ def search(string, word_or_character):
             return False
     elif type(string) == tuple or type(string) == list:
         empty_string = ""
-        for word in string:
+        for str(word) in string:
             empty_string += word
         if word_or_character in list(empty_string):
             return True
@@ -27,7 +28,7 @@ def search(string, word_or_character):
             return False
     return False
 
-print(search(string2, "o"))
+print(search(string5, "b"))
 
 #####################################################################################################################
 def range_func(string, start, end, step):

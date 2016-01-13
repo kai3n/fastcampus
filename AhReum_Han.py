@@ -30,4 +30,4 @@ def search(string,word):
      return False
 string = 'i wanna something to eat'
 word = ({'A':'a','B':'b','C':'c'})
-print(search('a'))
+print(search('A'))

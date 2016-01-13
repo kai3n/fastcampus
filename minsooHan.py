@@ -8,36 +8,13 @@ print (word_count('I am a boy'))
 '''
 def search(string, word):
 
-    if type(string) == list:
+
+    if type(string) == list or type(string) == tuple or type(string) ==set or type(string)==str:
         mon = list(string)
         if word in mon:
             return True
         else:
             return False
-
-
-    elif type(string) == tuple:
-        mon = list(string)
-        if word in mon:
-            return True
-        else :
-            return False
-
-    elif type(string) == set:
-        mon = list(string)
-        if word in mon:
-            return True
-        else :
-            return False
-
-    elif type(string) == str:
-        mon = set(string)
-        mon_word = set(word)
-        if mon_word == mon:
-            return True
-        else :
-            return False
-
 
     else :
         return False
@@ -45,8 +22,7 @@ def search(string, word):
 
 
 
-print(search([1,2],1))
 print(search({1,2},1))
 print(search((1,2),1))
-print(search('aaa','aa'))
-print(search('aaaa','aa'))
+print(search('aaa','a'))
+print(search('afefa','a'))

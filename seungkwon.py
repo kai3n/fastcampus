@@ -33,8 +33,8 @@ def myRange(start, stop, step):
     start~stop까지 step만큼의 숫자 리스트 반환
     :param start: 시작하는 숫자
     :param stop: 끝나는숫자
-    :param step:
-    :return:
+    :param step: n, n+1과의 차이
+    :return: 이 함수로 생성된 list반환, 혹은 에러 메세지
     """
     num = start
     result = list()

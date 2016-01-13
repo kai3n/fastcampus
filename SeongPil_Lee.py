@@ -68,27 +68,35 @@ print(num_range(10, -22, -4 ))
 
 
 def new_upper(string):
+    if type(string) == str:
+        pass
+    else:
+        return None
     chars = ''
     for char in string:
         asci = ord(char)
-        if asci > 96:
+        if 96 < asci and asci < 123:
             asci -= 32
             chars += chr(asci)
-        elif asci < 96:
+        elif 64 < asci and asci < 91 or asci == 32:
             chars += chr(asci)
+        else:
+            return 'arg must be only str'
     return chars
 
-print(new_upper('abdTcdG'))
+print(new_upper('PlAnRi abLUeu'))
 
 def new_lower(string):
     chars = ''
     for char in string:
         asci = ord(char)
-        if asci < 96:
+        if 64 < asci and asci < 91:
             asci += 32
             chars += chr(asci)
-        elif asci > 96:
+        elif 96 < asci and asci < 123 or asci == 32:
             chars += chr(asci)
+        else:
+            return 'arg must be only str'
     return chars
 
-print(new_lower('DLFaadTDdfd'))
+print(new_lower('SuPeR PoWeR'))

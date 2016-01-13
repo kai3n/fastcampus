@@ -90,5 +90,5 @@ def word_lower(word):
 
 print(word_upper('gTsdQQalstn'))
 print(word_lower('TDadsfaefFSE'))
-print(word_lower(123))
+print(word_lower(12343))
 

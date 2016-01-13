@@ -1,4 +1,4 @@
-"""
+
 # 1. 문장이 들어오면 해당 문장을 단어별로 끊어, 단어 갯수 리턴
 def word_count(word):
     words_list = word.split(" ")

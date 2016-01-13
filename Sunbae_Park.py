@@ -14,7 +14,7 @@ def word_count1(word1):
 print(word_count1('i am a crazy dog. 그래 미친개 맞아 미친개'))
 
 search
-"""
+
 def a_search ( target , word ):
 
     if type(target) == dict:
@@ -45,10 +45,12 @@ word4 = 'e'
 print(a_search(target4, word4))
 
 """
+range function
+
 def ran(a,b,c):
-    if type(a+b+c) == int:
+    if type(a and b and c) == int:
+        e_list = []
         while a < b:
-            e_list = []
             e_list.append(a)
             a = a + c
         else:
@@ -57,4 +59,3 @@ def ran(a,b,c):
         return "not range function"
 
 print (ran(20, 30, 4))
-"""

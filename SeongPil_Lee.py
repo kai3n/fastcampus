@@ -6,6 +6,7 @@ def word_count(word):
 
 print(word_count('어려서부터 우리집은 가난했었고, 남들 가는 외식 한번 간적 없었고'))
 
+
 # def search(string, word):
     # if type(string) == dict:
     #     return False
@@ -44,30 +45,50 @@ def num_range(start, end, step):
     num_list = []
     if step == 0:
         return print('error: step must not be Zero')
-
-    if start < end:
-        if step > 0:
+    elif step > 0:
+        if start < end:
             while start < end:
                 num_list.append(start)
                 start += step
             return num_list
-        elif step < 0:
-            return []
         else:
-            print('error: I don\'t know what happened')
-    elif start > end:
-        if step < 0:
+            return []
+    elif step < 0:
+        if start > end:
             while start > end:
                 num_list.append(start)
                 start += step
             return num_list
-        elif step > 0:
-            return []
         else:
-            print('error: I don\'t know what happened')
+            return []
     else:
-        return []
+        return print('I don\'t know what happened')
 
-print(num_range(10,10,0))
+print(num_range(10, -22, -4 ))
 
 
+def new_upper(string):
+    chars = ''
+    for char in string:
+        asci = ord(char)
+        if asci > 96:
+            asci -= 32
+            chars += chr(asci)
+        elif asci < 96:
+            chars += chr(asci)
+    return chars
+
+print(new_upper('abdTcdG'))
+
+def new_lower(string):
+    chars = ''
+    for char in string:
+        asci = ord(char)
+        if asci < 96:
+            asci += 32
+            chars += chr(asci)
+        elif asci > 96:
+            chars += chr(asci)
+    return chars
+
+print(new_lower('DLFaadTDdfd'))

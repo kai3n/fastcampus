@@ -40,6 +40,8 @@ def myRange(start, stop, step):
     result = list()
 
     if step > 0:
+        if start > stop:
+            return "step에 +를 넣으면 숫자가 작아질 수 없어 ㅜㅜ"
         while num < stop:
             result.append(num)
             num += step
@@ -53,6 +55,9 @@ def myRange(start, stop, step):
                 num += step
                 last = num
                 #print("num:", num, "last:", last)
+    else:
+        # step이 0인경우
+        return "step은 0보다 크거나 작아야합니다~"
     return result
 
 def makeUpper(text):
@@ -91,7 +96,7 @@ def makeLower(text):
 
 def firstSearch(text, find_word):
     """
-    전체 텍스트에서 원하는 텍스트를 찾아줌
+    전체 텍스트에서 원하는 텍스트를 찾아줌 -> 내가 만든거
     :param text: 전체 텍스트, 리스트, 튜플
     :param find_word: 찾는 단어
     :return: 있으면 True, 없으면 False
@@ -145,4 +150,5 @@ print(1,search(a, 'ab'))
 # print(myRange(-1,-10,-1))
 
 #print("res:", makeUpper("AcZefh"))
-print("res:", makeLower("AcZefh"))
+# print("res:", makeLower("AcZefh"))
+print(myRange(0,-10,3))

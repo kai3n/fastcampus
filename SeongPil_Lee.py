@@ -9,14 +9,20 @@ print(word_count('어려서부터 우리집은 가난했었고, 남들 가는 �
 def search(string, word):
     if type(string) == dict:
         return False
-    elif type(string) == tuple:
+    elif type(string) == str:
         if word in string:
             return True
-
+        else:
+            return False
+    elif type(string) == list:
+        if word in string:
+            return True
+        else:
+            return False
     else:
         return False
 
-print(search({'a':'a','b':'b','c':'c'}, 'v'))
+print(search({'a':'a', 'b':'b'}, 'a'))
 
 def num_range(start, end, step):
     num_list = []

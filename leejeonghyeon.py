@@ -1,1 +1,2 @@
-print("test")g
+print("test")
+

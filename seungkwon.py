@@ -25,10 +25,36 @@ def search(text, find_word):
             for e in ele:
                 if e == find_word:
                     res = True
-
-
+    elif type(text) == dict:
+        res=False
     return res
 
+def myRange(start, stop, step):
+    """
+    start~stop까지 step만큼의 숫자 리스트 반환
+    :param start: 시작하는 숫자
+    :param stop: 끝나는숫자
+    :param step:
+    :return:
+    """
+    num = start
+    result = list()
+
+    if step > 0:
+        while num < stop:
+            result.append(num)
+            num += step
+    elif step < 0:
+        if start < stop and step < 0:
+            return "-를 넣으면 절대로 숫자가 올라갈수 없어 ㅜ"
+        else:
+            last = start
+            while last > stop:
+                result.append(num)
+                num += step
+                last = num
+                print("num:", num, "last:", last)
+    return result
 
 string_="i love chicken"
 text1 = "i wanna drink coffee"
@@ -39,8 +65,11 @@ text5 = ('maker', 'cheese', 'eggs') #false
 text6 = ['reservce my flight ticket','i like gem from tanya', 'cookie' ]
 
 #print(search(text1, "coffee"))
-print(search(text2, "coffee"))
-print(search(text3, "coffee"))
-print(search(text4, "coffee"))
-print(search(text5, "coffee"))
-print("last", search(text6, "coffee"))
+# print(search(text2, "coffee"))
+# print(search(text3, "coffee"))
+# print(search(text4, "coffee"))
+# print(search(text5, "coffee"))
+# print("last", search(text6, "coffee"))
+
+print(myRange(1,-10,-1))
+print(myRange(-1,-10,-1))

@@ -1,1 +1,1 @@
-print("ada")
+print("minsoo")

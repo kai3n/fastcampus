@@ -36,7 +36,7 @@ def range_func(input, start, end, step):
     return element_list
 
 input = "123456789"
-print(range_func(input, -2, -7, -2))
+print(range_func(input, 2, 7, 2))
 
 #####################################################################################################################
 

@@ -7,9 +7,9 @@ def word_count(word):
 print (word_count('I am a boy'))
 '''
 def search(string, word):
-    list_check=[1,2]
-    tuple_check=(1,2)
-    set_check={1,2}
+    list_check=[1]
+    tuple_check=(1)
+    set_check={1}
     string_check='check'
 
     if type(string) == type(list_check):

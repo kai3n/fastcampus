@@ -5,35 +5,38 @@ def word_count(sentence):
 
 print(word_count(sentence))
 
-###############################################
+#####################################################################################################################
 string1 = "I am a boy"
 string2 = ["I", "am", "a", "boy"]
 string3 = ("I", "am", "a", "boy")
 string4 = {"I" : "am", "a" : "boy"}
+string5 = [1,2,'abc',0.1,'efd']
 
-def search(string, word):
-    if type(string) == list or type(string) == str or type(string) == tuple:
-        #또는 밑의 줄의 word in string을 위의 if문에 and 처리해도 되지만, 가독성을 위해 분리했다.
-        #단,분리를 하는 경우에는 else: return False 처리를 한번 더 해줘야 한다.
-        #따라서 짧은 코드를 선호하는 경우에는 if문내에, 명시적이고 가독성이 좋은 코드를 선호하는 경우에는 nested if를 사용하는 것이 좋겠다
-        if word in string:
+def search(input, word_or_character):
+    if type(input) == str:
+        if word_or_character in input:
             return True
-        else:
-            return False
-    #여기에 굳이 "else:"를 쓰지 않아도 된다.
+    elif type(input) == tuple or type(input) == list:
+        empty_string = ""
+        for element in input:
+            empty_string += str(element)
+        if word_or_character in list(empty_string):
+            return True
     return False
 
-print(search(string2, "you"))
+print(search(string5, "a"))
 
-###############################################
-def range_function(string, start, end, step):
+#####################################################################################################################
+def range_func(input, start, end, step):
     index = start - 1
     element_list = []
     while index < end:
-        element_list.append(string[index])
+        element_list.append(input[index])
         index += step
     return element_list
 
-string = "012345678"
-print(range_function(string, 2, 7, 2))
+input = "012345678"
+print(range_func(input, 2, 7, 2))
+
+#####################################################################################################################
 

@@ -20,8 +20,8 @@ def search(string, word_or_character):
             return False
     elif type(string) == tuple or type(string) == list:
         empty_string = ""
-        for str(word) in string:
-            empty_string += word
+        for element in string:
+            empty_string += str(element)
         if word_or_character in list(empty_string):
             return True
         else:

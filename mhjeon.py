@@ -20,19 +20,20 @@ def search(string, word):
             return True
         else:
             return False
+    #여기에 굳이 "else:"를 쓰지 않아도 된다.
     return False
 
 print(search(string2, "you"))
 
 ###############################################
 def range_function(string, start, end, step):
-    index = start
+    index = start - 1
     element_list = []
     while index < end:
         element_list.append(string[index])
         index += step
     return element_list
 
-string = "abcdefghijklmnop"
+string = "012345678"
 print(range_function(string, 2, 7, 2))
 

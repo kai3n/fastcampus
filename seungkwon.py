@@ -5,7 +5,7 @@ def word_count(word):
     """
     return int(len(word.split(" ")))
 
-def search(text_no, find_word):
+def search(text_no, find):
     """
     전체 텍스트에서 원하는 텍스트를 찾아줌
     :param text: 전체 텍스트, 리스트, 튜플
@@ -13,6 +13,7 @@ def search(text_no, find_word):
     :return: 있으면 True, 없으면 False
     """
     text = str(text_no)
+    find_word = str(find)
     res = False
     if type(text) == str:
         resList = list(text.split())
@@ -55,12 +56,26 @@ def myRange(start, stop, step):
                 result.append(num)
                 num += step
                 last = num
-                print("num:", num, "last:", last)
+                #print("num:", num, "last:", last)
     return result
 
 def makeUpper(text):
+    """
+    소문자를 대문자로 바꿔준다
+    :param text:
+    :return:
+    """
+    result = ""
     for str in text:
-          ch =chr(str)
+        ch = ord(str)
+        if ch >= 97 and ch <=122:
+            print("before", ch)
+            ch += 32
+            print("after", ch)
+
+    return result
+
+
 
 string_="i love chicken"
 text1 = "i wanna drink coffee"
@@ -70,12 +85,14 @@ text4 = ('coffee maker', 'cheese', 'eggs') #true
 text5 = ('maker', 'cheese', 'eggs') #false
 text6 = ['reservce my flight ticket','i like gem from tanya', 'cookie' ]
 
-print(search(text1, "coffee"))
-print(search(text2, "coffee"))
-print(search(text3, "coffee"))
-print(search(text4, "coffee"))
-print(search(text5, "coffee"))
-print("last", search(text6, "coffee"))
+# print(search(text1, "coffee"))
+print(search(text2, 123))
+# print(search(text3, "coffee"))
+# print(search(text4, "coffee"))
+# print(search(text5, "coffee"))
+# print("last", search(text6, "coffee"))
+#
+# print(myRange(1,-10,-1))
+# print(myRange(-1,-10,-1))
 
-print(myRange(1,-10,-1))
-print(myRange(-1,-10,-1))
+#print(makeUpper("abcd"))

@@ -7,9 +7,28 @@ def word_count(word):
 print(word_count('어려서부터 우리집은 가난했었고, 남들 가는 외식 한번 간적 없었고'))
 
 def search(string, word):
-    if word in string:
-        return True
+    if type(string) == dict:
+        return False
+    elif type(string) == str:
+        if word in string:
+            return True
+        else:
+            return False
+    elif type(string) == list:
+        if word in string:
+            return True
+        else:
+            return False
     else:
         return False
 
-print(search(['ab', 'ac', 'ad'], 'af'))
+print(search({'a':'a', 'b':'b'}, 'a'))
+
+def num_range(start, end, step):
+    num_list = []
+    while start < end:
+        num_list.append(start)
+        start += step
+    return num_list
+
+print(num_range(0,10,2))

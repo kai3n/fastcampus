@@ -3,4 +3,4 @@ def word_count(word):
 
     return len(word_cnt)
 
-print (word_count('qweadf fjoe sdfkj'))
+print (word_count('I am a boy'))

@@ -1,1 +1,4 @@
-https://github.com/kai3n/fastcampus.git
+def word_count(word):
+    word_cnt = 0
+    return word_cnt
+## haha

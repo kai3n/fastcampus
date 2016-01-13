@@ -45,7 +45,6 @@ word4 = 'e'
 print(a_search(target4, word4))
 
 """
-range function
 
 def ran(a,b,c):
     if type(a and b and c) == int:
@@ -54,7 +53,7 @@ def ran(a,b,c):
             e_list.append(a)
             a = a + c
         else:
-            return e_list
+            return "can`t calculating"
     else:
         return "not range function"
 

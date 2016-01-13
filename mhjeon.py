@@ -16,19 +16,15 @@ def search(input, word_or_character):
     if type(input) == str:
         if word_or_character in input:
             return True
-        else:
-            return False
     elif type(input) == tuple or type(input) == list:
         empty_string = ""
         for element in input:
             empty_string += str(element)
         if word_or_character in list(empty_string):
             return True
-        else:
-            return False
     return False
 
-print(search(string5, "b"))
+print(search(string5, "a"))
 
 #####################################################################################################################
 def range_func(input, start, end, step):

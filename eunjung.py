@@ -1,25 +1,8 @@
-def do_nothing():
-    pass
+def word_count(word):
+    words_list = word.split(" ")
+    word_cnt = len(words_list)
+    return word_cnt
 
-def make_a_sound():
-    print('quack')
-
-def agree(num):
-    return "apple" + " " + str(num)
-
-def search(word):
-    some_list = ["apple","cat","dragon","egg"]
-    for val in some_list:
-        if val == word:
-            print("있음")
-        else:
-            print("없음")
-        break
-
-
-# do_nothing()
-# make_a_sound()
-# a = agree(10)
-# print(type(a))
-
-search('bee')
+print(word_count("Return a copy of the string where all tab characters are"\
+                +"replaced by one or more spaces, depending on the current column"\
+                +"and the given tab size. Tab positions occur every tabsize characters"))

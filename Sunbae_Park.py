@@ -1,10 +1,9 @@
-def agree():
-    return True
+def world_count(word):
+    word_cnt = word.count(' ')
+    return word_cnt
 
-if agree():
-    print('Splendid')
+print(world_count('i am a boy'))
 
-else:
-    print('That was unexpected')
 
-   
+
+

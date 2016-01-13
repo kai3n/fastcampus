@@ -12,4 +12,4 @@ def search(string, word):
     else:
         return False
 
-print(search({'a':'a','b':'b','c':'c'}, 'v'))
+print(search({'a':'a','b':'b','c':'c'}, 'vd'))

@@ -12,4 +12,21 @@ def word_count(word):
 print(word_count('python is too hard'))
 
 
+##search
 
+def search(string,word):
+ if type(string)==str:
+     new_string= string.split(" ")
+ elif type(string)== tuple:
+     new_string= string.split(" ")
+ elif type(string)== list:
+     new_string= string.split(" ")
+
+     return True
+
+ else:
+
+     return False
+string = 'i wanna something to eat'
+word = ({'A':'a','B':'b','C':'c'})
+print(search('A'))

@@ -44,7 +44,7 @@ print(word_count('어려서부터 우리집은 가난했었고, 남들 가는 �
 def num_range(start, end, step):
     num_list = []
     if step == 0:
-        return print('error: step must not be Zero')
+        return 'error: step must not be Zero'
     elif step > 0:
         if start < end:
             while start < end:
@@ -62,9 +62,9 @@ def num_range(start, end, step):
         else:
             return []
     else:
-        return print('I don\'t know what happened')
+        return 'Unknown Error'
 
-print(num_range(10, -22, -4 ))
+print(num_range(22, 22, 1))
 
 
 def new_upper(string):

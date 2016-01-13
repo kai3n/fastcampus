@@ -20,20 +20,25 @@ def search(string, word):
     else:
         new_list = list(string)
 
-    word = word.lower()
+    word = str(word).lower()
 
     for val in new_list:
-        val = val.lower()
+        val = str(val)
+        val = str(val).lower()
         if val == word:
             return True
+        else:
+            for item in val:
+                if item == word:
+                    return True
     return False
 
 #print(search({'a':'b'}, "COPY"))
-print(search("Return a copy of the string", "return"))
+print(search([1,2,3,4,5,'apple',], 'a'))
 """
 
 
-# 3. range 함수 구현
+# 3. range 함수 구현!!!!
 def make_range(start, end, step):
     # 범위를 구하는 게 가능한 수인지를 확인
     diff = end - start
@@ -46,13 +51,34 @@ def make_range(start, end, step):
 
     while True:
         start_num += step
-        if start_num < end :
-            number_list.append(start_num)
+
+        if step > 0:
+            if start_num < end :
+                number_list.append(start_num)
+            else:
+                break
         else:
-            break
+            if start_num > end :
+                number_list.append(start_num)
+            else:
+                break
+
     return number_list
 
 
-print(make_range(1,10,-1))
+print(make_range(5,-10,-1))
+
+
+# 4. upper 와 lower
+
+
+
+
+
+
+
+
+
+
 
 

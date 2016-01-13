@@ -15,6 +15,9 @@ def search(string, word):
         else:
             return False
     elif type(string) == list:
+        for item in string:
+            if word in item:
+                return True
         if word in string:
             return True
         else:
@@ -22,13 +25,33 @@ def search(string, word):
     else:
         return False
 
-print(search({'a':'a', 'b':'b'}, 'a'))
+print(search(['apple', 1], 'ap'))
 
 def num_range(start, end, step):
     num_list = []
-    while start < end:
-        num_list.append(start)
-        start += step
-    return num_list
+    if start > end:
+        max = start
+        min = end
+    elif start < end:
+        max = end
+        min = start
+    elif start == end:
+        return []
+    else:
+        return []
 
-print(num_range(0,10,2))
+    if step > 0:
+        while min < max:
+            num_list.append(min)
+            min += step
+            return num_list
+    elif step < 0:
+        while max > min:
+            num_list.append(max)
+            max += step
+            return num_list
+    elif step == 0:
+        return print('error')
+
+
+print(num_range(0,10,-2))

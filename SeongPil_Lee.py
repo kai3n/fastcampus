@@ -7,8 +7,12 @@ def word_count(word):
 print(word_count('어려서부터 우리집은 가난했었고, 남들 가는 외식 한번 간적 없었고'))
 
 def search(string, word):
-    if word in string:
-        return True
+    if type(string) == dict:
+        return False
+    elif type(string) == tuple:
+        if word in string:
+            return True
+
     else:
         return False
 

@@ -60,36 +60,6 @@ def search(string, word):
 
 print(search(['apple', 1, 0.1, 8, 0.4,'power'], 0.4))
 
-# def search(string, word):
-    # if type(string) == dict:
-    #     return False
-    #
-    # elif type(string) == list:
-    #     if type(word) == str:
-    #         for item in string:
-    #             if word in item:
-    #                 return True
-    #     else:
-    #         if word in string:
-    #             return True
-    #         else:
-    #             return False
-    #     if word in string:
-    #         return True
-    #     else:
-    #         return False
-    # else:
-    #     return False
-
-    # if type(string) == str:
-    #     if word in string:
-    #         return True
-    #     else:
-    #         return False
-    # elif type(string) == tuple or type(string) == list:
-
-# print(search(['apple', 1, 0.1], '1'))
-
 def num_range(start, end, step):
     num_list = []
     if step == 0:

@@ -1,1 +1,2 @@
 print("minsoo")
+print("practice")

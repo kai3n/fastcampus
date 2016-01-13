@@ -1,15 +1,16 @@
-
-
-
 def search(list, word):
     try:
-       return bool(list.count(word))
+        return bool(list.count(word))
     except:
         print("Input not valid, try again")
         return False
 
+
 def word_count(word):
     return len(word.split())
+
+
+def range(a,b):
 
 
 

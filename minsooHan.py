@@ -7,12 +7,9 @@ def word_count(word):
 print (word_count('I am a boy'))
 '''
 def search(string, word):
-    list_check=[1]
-    tuple_check=(1)
-    set_check={1}
-    string_check='check'
 
-    if type(string) == type(list_check):
+
+    if type(string) == list:
         mon = list(string)
         if word in mon:
             return True
@@ -20,21 +17,21 @@ def search(string, word):
             return False
 
 
-    elif type(string) == type(tuple_check):
+    elif type(string) == tuple:
         mon = list(string)
         if word in mon:
             return True
         else :
             return False
 
-    elif type(string) == type(set_check):
+    elif type(string) == set:
         mon = list(string)
         if word in mon:
             return True
         else :
             return False
 
-    elif type(string) == type(string_check):
+    elif type(string) == str:
         mon = set(string)
         mon_word = set(word)
         if mon_word == mon:
@@ -49,5 +46,8 @@ def search(string, word):
 
 
 
+print(search([1,2],1))
+print(search({1,2},1))
 print(search((1,2),1))
 print(search('aaa','aa'))
+print(search('aaaa','aa'))

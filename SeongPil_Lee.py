@@ -12,4 +12,13 @@ def search(string, word):
     else:
         return False
 
-print(search({'a':'a','b':'b','c':'c'}, 'vd'))
+print(search({'a':'a','b':'b','c':'c'}, 'v'))
+
+def num_range(start, end, step):
+    num_list = []
+    while start < end:
+        num_list.append(start)
+        start += step
+    return num_list
+
+print(num_range(0,10,2))

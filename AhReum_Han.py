@@ -17,7 +17,6 @@ print(word_count('python is too hard'))
 def search(string,word):
  if type(string)==str:
      new_string= string.split(" ")
-
  elif type(string)== tuple:
      new_string= string.split(" ")
  elif type(string)== list:

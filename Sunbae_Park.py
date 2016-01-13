@@ -7,4 +7,3 @@ if agree():
 else:
     print('That was unexpected')
 
-    

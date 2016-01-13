@@ -17,7 +17,10 @@ print(word_count1('i am a crazy dog. 그래 미친개 맞아 미친개'))
 
 def a_search ( target , word ):
 
-    a_find= target.count(word)
+    if type(target) == dict:
+        return False
+    else:
+        a_find= target.count(word)
 
     return bool(a_find)
 
@@ -29,5 +32,5 @@ word1 = 'a'
 word2 = 'ab'
 word3 = 'd'
 
-print(a_search(target1, word1))
+print(a_search(target3, word3))
 

@@ -1,4 +1,3 @@
-'''
 sentence = "I am a boy"
 
 def word_count(sentence):
@@ -21,11 +20,9 @@ def search(string, word):
             return True
         else:
             return False
-    else:
-        return False
+    return False
 
 print(search(string2, "you"))
-'''
 
 ###############################################
 def range_function(string, start, end, step):

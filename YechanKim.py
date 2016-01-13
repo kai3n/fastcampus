@@ -1,18 +1,19 @@
-print('*********** Multiplication Calculator*************')
+
+what = 'I love you'
+
+def word_counts(what):
+    how = len(what.split())
+    return how
+
+print(word_counts(what))
 
 
-Common = input("Enter a number: ")
-Common_more = input("Enter another number: ")
-
-converted_number = int(Common)
-converted_another_number = int(Common_more)
 
 
-def agree(one, two):
+#def search(str_1,str_2):
 
-    return one * two
 
-new = agree(converted_number,converted_another_number)
 
-print(new)
-print(type(new))
+
+
+

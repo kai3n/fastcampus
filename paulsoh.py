@@ -7,7 +7,7 @@ def search(list, word):
     except:
         print("Input not valid, try again")
         return False
-        
+
 def word_count(word):
     return len(word.split())
 

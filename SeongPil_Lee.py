@@ -6,15 +6,64 @@ def word_count(word):
 
 print(word_count('어려서부터 우리집은 가난했었고, 남들 가는 외식 한번 간적 없었고'))
 
+def search(string, word):
+    if type(string) == str:
+        if word in string:
+            return True
+        else:
+            return False
+    elif type(string) == list or type(string) == tuple:
+        if type(word) == str:
+            strings = []
+            for item in string:
+                if type(item) == str:
+                    strings.append(item)
+                else:
+                    continue
+            for checkStr in strings:
+                if word in checkStr:
+                    return True
+                else:
+                    continue
+            return False
+
+        elif type(word) == int:
+            integers = []
+            for item in string:
+                if type(item) == int:
+                    integers.append(item)
+                else:
+                    continue
+            for checkInt in integers:
+                if word in integers:
+                    return True
+                else:
+                    continue
+            return False
+
+        elif type(word) == float:
+            floats = []
+            for item in string:
+                if type(item) == float:
+                    floats.append(item)
+                else:
+                    continue
+            for checkFloat in floats:
+                if word == checkFloat:
+                    return True
+                else:
+                    continue
+            return False
+
+    else:
+        return 'Type Error'
+
+print(search(['apple', 1, 0.1, 8, 0.4,'power'], 0.4))
 
 # def search(string, word):
     # if type(string) == dict:
     #     return False
-    # elif type(string) == str:
-    #     if word in string:
-    #         return True
-    #     else:
-    #         return False
+    #
     # elif type(string) == list:
     #     if type(word) == str:
     #         for item in string:

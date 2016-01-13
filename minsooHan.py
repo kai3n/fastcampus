@@ -8,7 +8,6 @@ print (word_count('I am a boy'))
 '''
 def search(string, word):
 
-
     if type(string) == list:
         mon = list(string)
         if word in mon:

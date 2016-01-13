@@ -14,7 +14,7 @@ string5 = [1,2,'abc',0.1,'efd']
 
 def search(input, word_or_character):
     if type(input) == str:
-        if word_or_character in input:
+        if str(word_or_character) in input:
             return True
     elif type(input) == tuple or type(input) == list:
         empty_string = ""
@@ -30,13 +30,23 @@ print(search(string5, "bc"))
 def range_func(input, start, end, step):
     index = start - 1
     element_list = []
-    while index < end:
-        element_list.append(input[index])
-        index += step
-    return element_list
+
+    if start >= 0:
+        while index < end:
+            element_list.append(input[index])
+            index += step
+        return element_list
+
+    # Todo: backward range functino yet to be coded
+    else:
+        index = len(input) + start
+        while index < end:
+            element_list.append(input[index])
+            index += step
+        return element_list
 
 input = "123456789"
-print(range_func(input, 2, 7, 2))
+print(range_func(input, -1, -5, -2))
 
 #####################################################################################################################
 

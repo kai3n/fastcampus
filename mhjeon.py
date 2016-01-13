@@ -20,11 +20,11 @@ def search(input, word_or_character):
         empty_string = ""
         for element in input:
             empty_string += str(element)
-        if word_or_character in list(empty_string):
+        if word_or_character in empty_string:
             return True
     return False
 
-print(search(string5, "a"))
+print(search(string5, "bc"))
 
 #####################################################################################################################
 def range_func(input, start, end, step):
@@ -35,8 +35,8 @@ def range_func(input, start, end, step):
         index += step
     return element_list
 
-input = "012345678"
-print(range_func(input, 2, 7, 2))
+input = "123456789"
+print(range_func(input, -2, -7, -2))
 
 #####################################################################################################################
 

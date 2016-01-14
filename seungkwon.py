@@ -1,3 +1,17 @@
+#upper, lower는 아래쪽에 있습니다
+import time
+def elapsed_time(func):
+    def elsapse(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print((end - start)/24*60*60)
+        return result
+    return elsapse
+
+#print(time.time())
+
+
 def word_count(word):
     """
     :param word: 넣으려고 하는 문자열
@@ -5,6 +19,7 @@ def word_count(word):
     """
     return int(len(word.split(" ")))
 
+@elapsed_time
 def search(text, find):
     """
     명훈형님 코드에 힌트를 얻어 다시작성함.
@@ -28,9 +43,12 @@ def search(text, find):
 
     return result
 
+@elapsed_time
 def myRange(start, stop, step):
     """
     start~stop까지 step만큼의 숫자 리스트 반환
+    step 양수인지, 음수인지, 0  인지에 대한 경우로 나눔.
+    예외케이스를 고려했지만 분명히 빼먹은 부분이 있을거라 생각함.
     :param start: 시작하는 숫자
     :param stop: 끝나는숫자
     :param step: n, n+1과의 차이
@@ -46,13 +64,14 @@ def myRange(start, stop, step):
             result.append(num)
             num += step
     elif step < 0:
-        if start < stop and step < 0:
+        if start < stop:
             return "-를 넣으면 절대로 숫자가 올라갈수 없어 ㅜ"
         else:
             last = start
             while last > stop:
                 result.append(num)
                 num += step
+                # 중간변수를 사용한 이유: 음수의 경우 stop값 이전의 가장 작은값을 찾아야 함
                 last = num
                 #print("num:", num, "last:", last)
     else:
@@ -60,6 +79,7 @@ def myRange(start, stop, step):
         return "step은 0보다 크거나 작아야합니다~"
     return result
 
+@elapsed_time
 def makeUpper(text):
     """
     소문자를 대문자로 바꿔준다
@@ -78,6 +98,7 @@ def makeUpper(text):
             result += chr(ch)
     return result
 
+@elapsed_time
 def makeLower(text):
     """
     대문자 -> 소문자
@@ -94,6 +115,7 @@ def makeLower(text):
         result += chr(ch)
     return result
 
+@elapsed_time
 def firstSearch(text, find_word):
     """
     전체 텍스트에서 원하는 텍스트를 찾아줌 -> 내가 만든거
@@ -152,3 +174,4 @@ print(1,search(a, 'ab'))
 #print("res:", makeUpper("AcZefh"))
 # print("res:", makeLower("AcZefh"))
 print(myRange(0,-10,3))
+#데코레이션을 print()로 사용을 했는데 왜 함수 본연의 기능은 작동하지 않을까?

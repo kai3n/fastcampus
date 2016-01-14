@@ -118,17 +118,13 @@ def change_to_upper(word):
     #올바른 형태의 인자가 들어왔을 경우만 변환 진행한다.
     else:
         uppered_word = ""
-        for i in range(len(word)):
-            #소문자가 아닌 경우는 loop에서 다음으로 넘어간다. If구문과 else구문의 순서는 유의미하다.
+        for character in word:
             #소문자는 ASCII 코드상 97-122에, 대문자는 65-90에 해당한다. 같은 글자의 소문자 - 대문자의 차이는 32이다.
             #함수 ord()는 글자를 해당 ASCII코드 숫자로, chr()는 ASCII 코드를 글자로 변환한다.
-            if ord(word[i]) < 97 and ord(word[i]) > 122:
-                uppered_word += word[i]
-                continue
-            #소문자인 경우에만 order()를 통해 숫자로 변환 진행한다.
-            else:
-                ASCII_char = ord(word[i]) - 32
-                uppered_word += chr(ASCII_char)
+            ascii_char = ord(character)
+            if ascii_char >= 97 and ascii_char <= 122:
+                character = chr(ascii_char - 32)
+            uppered_word += str(character)
         return uppered_word
 
 #Change_to_upper()의 코드를 살짝 바꾸면 된다
@@ -137,14 +133,13 @@ def change_to_lower(word):
         return "올바른 입력값이 아닙니다."
     else:
         lowered_word = ""
-        for i in range(len(word)):
-            #대문자가 아니면 다음 글자로 넘어간다.
-            if ord(word[i]) < 65 or ord(word[i]) > 90:
-                lowered_word += word[i]
-                continue
-            else:
-                ASCII_char = ord(word[i]) + 32
-                lowered_word += chr(ASCII_char)
+        for character in word:
+            #소문자는 ASCII 코드상 97-122에, 대문자는 65-90에 해당한다. 같은 글자의 소문자 - 대문자의 차이는 32이다.
+            #함수 ord()는 글자를 해당 ASCII코드 숫자로, chr()는 ASCII 코드를 글자로 변환한다.
+            ascii_char = ord(character)
+            if ascii_char >= 65 and ascii_char <= 90:
+                character = chr(ascii_char + 32)
+            lowered_word += str(character)
         return lowered_word
 
 test_string1 = "abBzrTsdf134"

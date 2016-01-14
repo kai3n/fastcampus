@@ -3,16 +3,16 @@ class Calculator():
         pass
     def add(self, x, y):
         '두 매개변수 x, y를 더해서 결과를 정수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return
+        return (x+y)
     def subtract(self, x, y):
         '두 매개변수 x, y를 빼서 결과를 실수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return
+        return float(x-y)
     def multiply(self, x, y):
         '두 매개변수 x, y를 곱해서 결과를 정수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return
+        return int(x*y)
     def divide(self, x, y):
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
-        return
+        return int(round(x/y))
     def expCalc(self,expStr):
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
         ex) expCalc('1+3-5')는 -1을 반환한다.
@@ -34,9 +34,6 @@ class Calculator():
         """
         return
 
-> > > calc = Calculator()
-> > > calc.add(1,2)
-> > > calc.subtract(3,2)
-
-
-
+calc = Calculator()
+print(calc.add(1,2))
+print(calc.subtract(3,2))

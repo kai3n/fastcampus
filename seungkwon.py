@@ -56,7 +56,7 @@ class Calculator():
         elif int(mid[1][0]) >= 5 : #반올림에 해당하는지 확인
             res = int(mid[0]) + 1
 
-        return res
+        return int(res)
 
     @elapsed_time
     def expCalc(self,expStr):
@@ -66,42 +66,64 @@ class Calculator():
         ex) expCalc('1+3+5-0')는 9을 반환한다.
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
-
+        # 문자열이 아닌경우의 예외처리
         if type(expStr) != type("str"):
             return "문자열로 입력하세요"
 
+        # 입력받은 문자열에서 숫자만 저장할 변수
         number = list()
+        #숫자가 10의자리 이상일경우 중간 저장할 변수
         target = ""
+        #연산자를 저장할 변수
         opp = list()
 
         for op in expStr:
+            #모든 문자를 아스키코드로 변경
             ch = ord(op)
+            # 숫자일 경우
             if ch >= 48 and ch <= 57:
+                #숫자를 문자열로 바꿔서 저장함
                 target += str(chr(ch))
-
+            # 연산자가 올경우
             elif ch == 42 or ch == 43 or ch == 45 or ch ==47:
+                #먼저 연산자를 opp에 저장하고
                 opp.append(chr(ch))
+                #연산자가 왔다는건 숫자 입력이 마무리 되었다는 뜻이므로 숫자를 저장
                 number.append(int(target))
+                #중간 숫자저장하는 변수 초기화
                 target = ""
 
+        #마지막 숫자는 무조건 append
         number.append(int(target))
+
+        # 여기서부터 연산 시작,
+        # 연산을 위한 중간 변수 첫번째 숫자를 연산하기위한 변수에 첫번째 숫자를 넣는다
+
         midRes = number[0]
+        # 인덱스 접근을 위한 변수 i
         i = 0
+
+        #연산자 갯수만큼 연산을 해야함.
         while i < len(number)-1:
-            # print("i:",i, opp[i], number[i], i-1, len(number)-1)
+
+            # 더하기일 경우
             if opp[i] == "+":
                 midRes += number[i+1]
+            # 빼기일 경우
             elif opp[i] == "-":
                 midRes -= number[i+1]
+            # 곱하기인 경우
             elif opp[i] == "*":
                 midRes *= number[i+1]
+            # 나누기인 경우
             elif opp[i] == "/":
+                #나누는 수가 0이면 연산이 불가능함
                 if number[i+1] == 0:
                     return "나누기 뒤에 0을 입력하면 안되요~!!"
                 midRes /= number[i+1]
-
+            #인덱스를 1 더함.
             i+=1
-
+        #결과값 반환
         return int(midRes)
 
     @elapsed_time

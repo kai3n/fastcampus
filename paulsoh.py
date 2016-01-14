@@ -78,9 +78,9 @@ def range_function(a, *args):
 # A = 65 a = 97 Z = 90 z = 122
 
 ################################################################################################
-###  my_lower fucntion ; takes str as input and lower cases all the letters inside the str  ###
+###  wd_lower fucntion ; takes str as input and lower cases all the letters inside the str  ###
 ################################################################################################
-def my_lower(string):
+def wd_lower(string):
     buf = ''
     if string is None :
         return buf
@@ -95,9 +95,9 @@ def my_lower(string):
 
 
 ################################################################################################
-###  my_upper fucntion ; takes str as input and upper cases all the letters inside the str  ###
+###  wd_upper fucntion ; takes str as input and upper cases all the letters inside the str  ###
 ################################################################################################
-def my_upper(string):
+def wd_upper(string):
     buf = ''
     if string is None :
         return buf
@@ -112,8 +112,8 @@ def my_upper(string):
 
 ## test / debugging sequence ##
 
-print(my_lower('heLLo mY namE iS Paul soh'))
-print(my_upper('heLLo mY namE iS Paul soh d8d7Cdf7gFddvDDF'))
+print(wd_lower('heLLo mY namE iS Paul soh'))
+print(wd_upper('heLLo mY namE iS Paul soh d8d7Cdf7gFddvDDF'))
 
 
 
@@ -141,4 +141,4 @@ print(search(test_list, query_for_test_list))
 print(search(test_string, query_for_test_string))
 print(search(test_dict, query_for_test_dict))
 
-print(my_lower('aBcDeFgHiJ'))
+print(wd_lower('aBcDeFgHiJ'))

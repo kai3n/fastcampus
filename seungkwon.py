@@ -47,10 +47,14 @@ class Calculator():
 
         res = float(x/y) #실수로 바꾼다
         mid = str(res).split(".") # . 을 기준으로 나눈다
-        if int(mid[1][0]) >= 5 : #반올림에 해당하는지 확인
+        # print(int(mid[0]))
+        # print("--",int(mid[1][0]))
+        # print(res < 0 and int(mid[1][0]) >= 5)
+
+        if res < 0 and int(mid[1][0]) >= 5:
+            res = int(mid[0]) - 1
+        elif int(mid[1][0]) >= 5 : #반올림에 해당하는지 확인
             res = int(mid[0]) + 1
-        else:
-            res = int(res)
 
         return res
 
@@ -116,9 +120,9 @@ class Calculator():
 
 calc = Calculator()
 # calc.add(1,2)
-# calc.subtract(3,2)
-#calc.divide(5,4)
-calc.expCalc("12+3-5/2+8")
+# calc.subtract(-3,2)
+calc.divide(-3,2)
+#calc.expCalc("12+3-5/2+8")
 
 
 

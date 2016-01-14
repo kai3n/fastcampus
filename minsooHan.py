@@ -111,27 +111,30 @@ class Calculator():
 
     def divide(self, x, y):
 
-        div_result = int(x/y)
-        div_int = x/y
+        if y!=0:
+            div_result = int(x/y)
+            div_int = x/y
 
-        if div_int >0:
-            float_Value = div_int - div_result
+            if div_int >0:
+                float_Value = div_int - div_result
 
 
-            if float_Value >=0.5:
-                div_result+=1
-                return int(div_result)
-            else :
-                return int(div_result)
+                if float_Value >=0.5:
+                    div_result+=1
+                    return int(div_result)
+                else :
+                    return int(div_result)
 
-        else:
-            float_Value = div_int - div_result
-
-            if float_Value<=-0.5:
-                div_result-=1
-                return int(div_result)
             else:
-                return int(div_result)
+                float_Value = div_int - div_result
+
+                if float_Value<=-0.5:
+                    div_result-=1
+                    return int(div_result)
+                else:
+                    return int(div_result)
+        else:
+            return False
 
 
 
@@ -157,5 +160,5 @@ class Calculator():
         return
 
 calc = Calculator()
-print(calc.divide(-3,2))
+print(calc.divide(0,2))
 print(calc.subtract(3,6.5))

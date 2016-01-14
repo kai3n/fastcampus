@@ -51,6 +51,8 @@ print(range_func(input, -1, -5, -2))
 
 #####################################################################################################################
 
+#승권: 형님 input의 용도는 무엇인가요??
+
 def print_args(*args):
     print("Positional argument tuple:", args)
 
@@ -159,5 +161,3 @@ def countdown(n):
 
 print(type(countdown))
 '''
-
-

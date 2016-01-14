@@ -16,6 +16,7 @@ def elapsed_time(func):
         if len(kwargs):
             print("들어온 값:", kwargs)
         print("이 함수로 실행할 결과:", result)
+        print("리턴타입:", type(result))
         print("============================================================================")
         return result
     return elsapse
@@ -143,12 +144,20 @@ class Calculator():
 calc = Calculator()
 # calc.add(1,2)
 # calc.subtract(-3,2)
-calc.divide(-3,2)
+# calc.divide(-3,2)
 #calc.expCalc("12+3-5/2+8")
 
 
 
-
+print(calc.divide(0,0))
+print(calc.divide(0,1))
+print(calc.divide(2,6))
+print(calc.divide(3,6))
+print(calc.divide(-3,2))
+print(calc.divide(-3.0,2.0))
+print(calc.divide(0.1,0.2))
+print(calc.divide(0.3,0.5))
+print(calc.divide(0.2,0.5))
 
 
 

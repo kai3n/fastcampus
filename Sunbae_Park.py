@@ -85,10 +85,14 @@ class Calculator():
         return  self.multiple
 
     def divide(self, x, y):
-        self.divide = int (x/y)
+        a = string(x/y)
+        a.split('.')
+        self.divide =
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
         return
     def expCalc(self,expStr):
+        expStr
+        self.expCalc = int()
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
         ex) expCalc('1+3-5')는 -1을 반환한다.
         ex) expCalc('1+3*5')는 20을 반환한다.

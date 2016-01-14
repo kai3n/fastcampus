@@ -28,23 +28,31 @@ class Calculator():
     def add(self, x, y):
         '두 매개변수 x, y를 더해서 결과를 정수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
 
-        return x+y
+        return int(x+y)
     @elapsed_time
     def subtract(self, x, y):
 
         '두 매개변수 x, y를 빼서 결과를 실수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return x - y
+        return float(x - y)
     @elapsed_time
     def multiply(self, x, y):
         '두 매개변수 x, y를 곱해서 결과를 정수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return x * y
+        return int(x * y)
 
     @elapsed_time
     def divide(self, x, y):
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
         if y == 0:
             return "나누기는 0으로 할 수 없음"
-        return x/y
+
+        res = float(x/y) #실수로 바꾼다
+        mid = str(res).split(".") # . 을 기준으로 나눈다
+        if int(mid[1][0]) >= 5 : #반올림에 해당하는지 확인
+            res = int(mid[0]) + 1
+        else:
+            res = int(res)
+
+        return res
 
     @elapsed_time
     def expCalc(self,expStr):
@@ -62,9 +70,24 @@ class Calculator():
         #연산자들
         exp = {'+', '-', '*', '/'}
 
+        number = list()
+        target = ""
+        opp = list()
+        index = 0
+        midIndex = 0
         for op in expStr:
-            if op in expStr:
+            ch = ord(op)
+            print(op, ch)
+            if ch >= 48 and ch <= 57:
+                # print("====",type(str(chr(ch))),mid)
+                target += str(chr(ch))
+                print(target)
+            elif ch == 42 or ch == 43 or ch == 45 or ch ==47:
+                opp.append(chr(ch))
+                number.append(int(target))
+                target = ""
 
+        print("result: number",number,"연산자 ", opp)
 
         return result
 
@@ -85,7 +108,8 @@ class Calculator():
 calc = Calculator()
 # calc.add(1,2)
 # calc.subtract(3,2)
-calc.expCalc("1+1")
+calc.divide(5,4)
+calc.expCalc("12+3")
 
 
 

@@ -6,7 +6,12 @@ def elapsed_time(func):
         result = func(*args, **kwargs)
         end = time.time()
         print("============================================================================")
-        print("함수이름: ",func.__name__,", 걸린시간:" ,(end - start)/24*60*60 ,"초")
+        print("함수이름:",func.__name__,", 걸린시간:")
+        print("걸린시간:",(end - start)/24*60*60 ,"초")
+        if len(args) >0:
+            print("들어온값:", args)
+        if len(kwargs):
+            print("들어온 값:", kwargs)
         print("이 함수로 실행할 결과:", result)
         print("============================================================================")
         return result

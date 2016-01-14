@@ -196,21 +196,22 @@ class Calculator():
         return int(x * y)
     def divide(self, x, y):
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
+        try:
+            split_num = str(x/y).split(".")
+            num = int(split_num[0])
+            digit_to_compare = int(split_num[1][0])
 
-        split_num = str(x/y).split(".")
-        num = int(split_num[0])
-        digit_to_compare = int(split_num[1][0])
+            if num >= 0:
+                if digit_to_compare >= 5:
+                    return num + 1
+                return num
 
-        if num > 0:
-            if digit_to_compare >= 5:
-                return num + 1
+            else:
+                if digit_to_compare >= 5:
+                    return num - 1
+                return num
 
-            return num
-        else:
-            if digit_to_compare >= 5:
-                return num - 1
-
-            return num
+        except ZeroDivisionError: return "Division by zero."
 
     def expCalc(self,expStr):
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
@@ -222,21 +223,25 @@ class Calculator():
         '''
         ints = []
         ops=[]
-        cal_result = ""
+        cal = ""
         empty_string = ""
 
-        for element in expStr:
-            try:
-                elem = int(element)
+        for elem in expStr:
+            if elem.isdigit():
                 empty_string += str(elem)
-            except SyntaxError:
+
+            else:
                 ints.append(empty_string)
                 empty_string = ""
-                ops += elem
+                ops += str(elem)
 
-        cal_result=""
-        for range(len(ints))
+        for i in ints:
+            cal = eval("i" + )
+        print(ints)
+        print(ops)
         '''
+
+
 
     def expCalcAdvanced(self,expStr):
         """숫자 표현식을 문자열로 받아서(이 때 *와 / 연산자는 우선순위로 계산함, ()괄호에 대한 우선순위도 매김)표현식에
@@ -254,5 +259,8 @@ class Calculator():
 calc = Calculator()
 print(calc.add(1,2))
 calc.subtract(3,2)
-print(calc.multiply(4,3))
-print(calc.divide(-16,5))
+
+print(calc.divide(0.3,0.5))
+
+
+calc.expCalc("4+3+123/2")

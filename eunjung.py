@@ -1,4 +1,62 @@
-"""
+########################### 과 ####################### 제 #####################################
+
+def wd_upper(word):
+    """
+    이 함수는 word 문자열(str type) 전체를 대문자로 변환하는 함수이다.
+    매개변수가 str 타입이 아닐 시 None을 반환한다.
+    ex1) wd_upper('apple')를 호출할 시 'APPLE'를 반환한다.
+    ex2) wd_upper('Plane')를 호출할 시 'PLANE'를 반환한다.
+    ex3) wd_upper('AbCdE')를 호출할 시 'ABCDE'를 반환한다.
+    :param word:
+    :return word:
+    """
+    if type(word) != str:
+        return None
+
+    result = ""
+
+    for unit in word:
+        num = ord(unit)
+        if 96< num < 123:
+            num -= 32
+        result += chr(num)
+    return result
+
+
+
+def wd_lower(word):
+    """
+    이 함수는 word 문자열(str type) 전체를 소문자로 변환하는 함수이다.
+    매개변수가 str 타입이 아닐 시 None을 반환한다.
+    ex1) wd_upper('apple')를 호출할 시 'apple'를 반환한다.
+    ex2) wd_upper('Plane')를 호출할 시 'plane'를 반환한다.
+    ex3) wd_upper('AbCdE')를 호출할 시 'abcde'를 반환한다.
+    :param word:
+    :return word:
+    """
+    if type(word) != str:
+        return
+
+    result = ""
+
+    for unit in word:
+        num = ord(unit)
+        if 64 < num < 91:
+            num += 32
+        result += chr(num)
+    return result
+
+
+
+print(wd_lower('aPplE'))
+
+
+#############################################################################################
+
+
+
+
+
 # 1. 문장이 들어오면 해당 문장을 단어별로 끊어, 단어 갯수 리턴
 def word_count(word):
     words_list = word.split(" ")
@@ -28,9 +86,15 @@ def search(string, word):
         if val == word:
             return True
         else:
-            for item in val:
-                if item == word:
+            for count in range(0,len(val)):
+                length = len(val)
+                combine = val[count]
+                if combine == word:
                     return True
+                else:
+                    while True:
+                        combine += val[]
+
     return False
 
 #print(search({'a':'b'}, "COPY"))
@@ -77,37 +141,8 @@ print(make_range(5,-10,-1))
 
 
 
-def search(string, word):
 
-    if type(string) == str:
-        new_list = string.split(" ")
-    elif type(string) == dict:
-        return False
-    else:
-        new_list = list(string)
 
-    word = str(word).lower()
-
-    for val in new_list:
-        val = str(val)
-        val = str(val).lower()
-        if val == word:
-            return True
-        else:
-            for count in range(0,len(val)):
-                length = len(val)
-                combine = val[count]
-                if combine == word:
-                    return True
-                else:
-                    while True:
-                        combine += val[]
-
-    return False
-
-#print(search({'a':'b'}, "COPY"))
-print(search([1,2,3,4,5,'apple',], 'a'))
-"""
 
 ################################160114####################################################################
 
@@ -132,10 +167,26 @@ class Calculator():
 
     def divide(self, x, y):
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
+        if x == 0 or y == 0:
+            return 0
+
         result = int(x//y)
-        remain = float(x/y) - float(x//y)
-        if remain >= 0.5:
-            result += 1
+        remain = 0
+
+        if x*y > 0:
+            remain = float(x/y) - float(x//y)
+        else:
+            remain = float(x/y) - (float(x//y) + 1)
+
+        if float(x//y) > 0:
+            if abs(remain) >= 0.5:
+                result += 1
+        else:
+            if abs(remain) >= 0.5:
+                result = float(x//y)
+            else:
+                result = float(x//y) + 1
+
         return result
 
     def expCalc(self,expStr):
@@ -145,7 +196,7 @@ class Calculator():
         ex) expCalc('1+3+5-0')는 9을 반환한다.
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
-        
+
 
 
         return
@@ -165,6 +216,14 @@ class Calculator():
 > > > calc = Calculator()
 > > > calc.add(1,2)
 > > > calc.subtract(3,2)
+
+
+
+
+
+
+
+
 
 
 

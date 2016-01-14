@@ -220,7 +220,7 @@ class Calculator():
         ex) expCalc('1+3+5-0')는 9을 반환한다.
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
-        '''
+
         ints = []
         ops=[]
         cal = ""
@@ -236,10 +236,12 @@ class Calculator():
                 ops += str(elem)
 
         for i in ints:
-            cal = eval("i" + )
+            caldf = eval(ints[i] + ops[i] + ints[i+1])
+            print(caldf)
+
         print(ints)
         print(ops)
-        '''
+
 
 
 

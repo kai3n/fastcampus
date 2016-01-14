@@ -30,7 +30,9 @@ def search(string,word):
 
     return False
 
-print(search('abc','a'))  '''
+print(search('abc','a'))
+
+
 class Calculator():
      def __init__(self):
          pass
@@ -109,3 +111,74 @@ print(calc.add(1,2))
 print(calc.subtract(3,2))
 print(calc.multiply(3,2))
 print(calc.divide(7,-3))
+'''
+
+
+def upper(string):
+
+    if type(string) == str:
+
+        character_list = []
+
+        for using_character in string:
+
+            converting_character = ord(using_character)
+
+            if 96< converting_character <123:
+
+                converted_character = converting_character - 32
+
+                character = chr(converted_character)
+
+                character_list.append(character)
+
+            else:
+
+                character = chr(converting_character)
+                character_list.append(character)
+
+
+        return "".join(character_list)
+
+    else:
+        print("Wrong!")
+
+def lower(string):
+
+    if type(string) == str:
+
+        character_list = []
+
+        for using_character in string:
+
+            converting_character = ord(using_character)
+
+            if 64< converting_character <97:
+
+                converted_character = converting_character + 32
+
+                character = chr(converted_character)
+
+                character_list.append(character)
+
+            else:
+
+                character = chr(converting_character)
+                character_list.append(character)
+
+
+        return "".join(character_list)
+
+    else:
+        print("Wrong!")
+
+print(upper("abcd"))
+print(upper("aBcd"))
+print(upper("aB1d"))
+print(upper(1))
+print(upper("1"))
+
+print(lower('ABCD'))
+print(lower('aBcd'))
+print(lower('1Be!'))
+print(lower(1))

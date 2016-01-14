@@ -5,7 +5,10 @@ def elapsed_time(func):
         start = time.time()
         result = func(*args, **kwargs)
         end = time.time()
+        print("============================================================================")
         print("함수이름: ",func.__name__,", 걸린시간:" ,(end - start)/24*60*60 ,"초")
+        print("이 함수로 실행할 결과:", result)
+        print("============================================================================")
         return result
     return elsapse
 
@@ -160,7 +163,7 @@ text4 = ('coffee maker', 'cheese', 'eggs')
 text5 = ('maker', 'cheese', 'eggs')
 text6 = ['reservce my flight ticket','i like gem from tanya', 'cookie' ]
 a = [1, 2, 'abc', 0.1, 'efd']
-print(1,search(a, 'ab'))
+search(a, 'ab')
 # print(2, search(text2, 123)) #false
 # print(3, search(text3, "coffee")) #false
 # print(4,search(text4, "coffee")) #True

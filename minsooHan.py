@@ -160,5 +160,5 @@ class Calculator():
         return
 
 calc = Calculator()
-print(calc.divide(0,2))
+print(calc.divide(2,6))
 print(calc.subtract(3,6.5))

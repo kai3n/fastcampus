@@ -92,7 +92,6 @@ print(word_upper('gTsdQQalstn'))
 print(word_lower('TDadsfaefFSE'))
 print(word_lower(12343))
 """
-
 class Calculator():
     def __init__(self):
         pass
@@ -104,31 +103,46 @@ class Calculator():
 
     def subtract(self, x, y):
         sub_result = x-y
-        return sub_result
+        return float(sub_result)
 
     def multiply(self, x, y):
-        mul_result = x*y
-        return mul_result
+        mul_result = int(x*y)
+        return int(mul_result)
 
     def divide(self, x, y):
-        div_result = int(x/y)
-        div_int = x/y
 
-        float_Value = div_int - div_result
+        if y!=0:
+            div_result = int(x/y)
+            div_int = x/y
 
-        if float_Value >=0.5:
-            div_result+=1
-            return div_result
-        else :
-            return div_result
+            if div_int >0:
+                float_Value = div_int - div_result
 
 
-        return
+                if float_Value >=0.5:
+                    div_result+=1
+                    return int(div_result)
+                else :
+                    return int(div_result)
+
+            else:
+                float_Value = div_int - div_result
+
+                if float_Value<=-0.5:
+                    div_result-=1
+                    return int(div_result)
+                else:
+                    return int(div_result)
+        else:
+            return False
+
+
+
     def expCalc(self,expStr):
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
         ex) expCalc('1+3-5')는 -1을 반환한다.
         ex) expCalc('1+3*5')는 20을 반환한다.
-        ex) expCalc('1+3+5-0')는 9을 반환한다.
+        ex) expCalc('12+3+5-0')는 20을 반환한다.
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
         return
@@ -146,5 +160,5 @@ class Calculator():
         return
 
 calc = Calculator()
-print(calc.divide(44,7))
-calc.subtract(3,2)
+print(calc.divide(2,6))
+print(calc.subtract(3,6.5))

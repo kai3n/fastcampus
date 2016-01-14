@@ -85,7 +85,7 @@ class Calculator():
         return  self.multiple
 
     def divide(self, x, y):
-
+        self.divide = int (x/y)
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
         return
     def expCalc(self,expStr):

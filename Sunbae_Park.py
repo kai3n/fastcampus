@@ -85,11 +85,14 @@ class Calculator():
         return  self.multiple
 
     def divide(self, x, y):
-        a = string(x/y)
-        a.split('.')
-        self.divide =
+        a = str(x/y)
+        a = a.split('.')
+        if int(a[1][0]) >= 5:
+            self.divide = int(a[0]) + 1
+        else:
+            self.divide = int(a[0])
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
-        return
+        return self.divide
     def expCalc(self,expStr):
         expStr
         self.expCalc = int()
@@ -117,3 +120,4 @@ calc = Calculator()
 print(calc.add(1,2))
 print(calc.subtract(3,2))
 print(calc.multiply(5,2))
+print(calc.divide(313,293))

@@ -117,9 +117,9 @@ class Calculator():
 
         if float_Value >=0.5:
             div_result+=1
-            return div_result
+            return int(div_result)
         else :
-            return div_result
+            return int(div_result)
 
         return
     def expCalc(self,expStr):

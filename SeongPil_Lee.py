@@ -12,7 +12,20 @@ class Calculator():
     def multiply(self, x, y):
         return int(x * y)
     def divide(self, x, y):
-        return round(x / y)
+        value = x / y
+        differ = value - int(value)
+        fill = 1 - differ
+        if x >= y:
+            if differ >= 0.5:
+                return int(value + fill)
+            else:
+                return int(value - differ)
+        else:
+            if differ <= 0.5:
+                return int(value - differ)
+            else:
+                return int(value + fill)
+
     def expCalc(self,expStr):
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
         ex) expCalc('1+3-5')는 -1을 반환한다.
@@ -20,9 +33,12 @@ class Calculator():
         ex) expCalc('1+3+5-0')는 9을 반환한다.
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
-
-
-        return
+        # numList = []
+        # intList = []
+        # calList = []
+        # for char in expStr:
+        #
+        # return
     def expCalcAdvanced(self,expStr):
         """숫자 표현식을 문자열로 받아서(이 때 *와 / 연산자는 우선순위로 계산함, ()괄호에 대한 우선순위도 매김)표현식에
         대한 결과를 소수점 둘째자리에서 반올림하여 실수형으로 변환하는 함수이다. 난이도:★★★★★
@@ -37,8 +53,10 @@ class Calculator():
         return
 
 calc = Calculator()
-calc.expCalc('1+2+3')
-calc.subtract(3,2)
+# calc.expCalc('1+2+3')
+print(calc.add(4.5,3.3))
+print(calc.subtract(5.5,3.1))
+print(calc.divide(1,3))
 
 
 

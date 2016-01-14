@@ -37,6 +37,7 @@ def new_lower(string):
 print(new_lower('SuPeR PoWeR'))
 
 
+
 # class Calculator():
 #     def __init__(self):
 #         pass

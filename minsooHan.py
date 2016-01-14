@@ -99,7 +99,7 @@ class Calculator():
     def add(self, x, y):
         add_result = x + y
 
-        return add_result
+        return int(add_result)
 
     def subtract(self, x, y):
         sub_result = x-y

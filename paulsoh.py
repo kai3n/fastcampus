@@ -216,7 +216,6 @@ calc = Calculator()
 print(calc.divide(3,5))
 print(calc.divide(2,5))
 print(calc.divide(100,99))
-print(calc.divide(50,99))
 print(calc.divide(49,100))
 
 

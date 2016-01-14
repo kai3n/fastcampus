@@ -157,7 +157,7 @@ class Calculator():
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
         real_ans = int(x/y)
         ans = str(float(x/y))
-        if len(ans)>= 3:
+        if len(ans) >= 3:
             if int(ans[2]) >= 5:
                 return real_ans+1
             else:
@@ -172,29 +172,44 @@ class Calculator():
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
         operands = []
-        operand2 = ''
         operators = []
-        buf = []
-        def isCharOperator(char):
-            if char is '+':
-                return '+'
-            elif char is '-':
-                return '-'
-            elif char is '*':
-                return '*'
-            elif char is '/':
-                return '/'
+        buf = ''
+
+        for i in range(0,len(expStr)):
+            if expStr[i] is '+' or expStr[i] is '-' or expStr[i] is '/' or expStr[i] is '*':
+                operators.append(expStr[i])
+                operands.append(buf)
+                buf = ''
             else:
-                return False
+                buf += expStr[i]
+                if i == len(expStr)-1:
+                    operands.append(buf)
 
-        for element in expStr:
-            if isCharOperator(element) != False:
-                operators.append(element)
-                print(operators)
-            buf += element
-            print(buf)
+        ans = 0
+        operands_shift = operands[1:]
 
-        return
+        for i in range(0, len(operators)):
+            if i is 0:
+                if operators[i] is '+':
+                    ans = (int(operands[i]) + int(operands_shift[i]))
+                elif operators[i] is '-':
+                    ans = (int(operands[i]) - int(operands_shift[i]))
+                elif operators[i] is '*':
+                    ans =(int(operands[i]) * int(operands_shift[i]))
+                else:
+                    ans =(int(operands[i]) / int(operands_shift[i]))
+            else:
+                if operators[i] is '+':
+                    ans = ans + int(operands_shift[i])
+                elif operators[i] is '-':
+                    ans = ans - int(operands_shift[i])
+                elif operators[i] is '*':
+                    ans = ans * int(operands_shift[i])
+                else:
+                    ans = ans / int(operands_shift[i])
+
+        return ans
+
 
     def expCalcAdvanced(self,expStr):
         """숫자 표현식을 문자열로 받아서(이 때 *와 / 연산자는 우선순위로 계산함, ()괄호에 대한 우선순위도 매김)표현식에
@@ -213,13 +228,14 @@ calc = Calculator()
 # print(calc.add(1,2))
 # print(calc.subtract(3,2))
 # print(calc.multiply(3,5))
-print(calc.divide(3,5))
-print(calc.divide(2,5))
-print(calc.divide(100,99))
-print(calc.divide(49,100))
+# print(calc.divide(3,5))
+# print(calc.divide(2,5))
+# print(calc.divide(100,99))
+# print(calc.divide(49,100))
 
 
-#print(calc.expCalc('123-442+5221'))
+print(calc.expCalc('12*12340+11234'))
+
 
 
 

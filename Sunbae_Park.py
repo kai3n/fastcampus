@@ -13,12 +13,21 @@ def word_count1(word1):
 
 print(word_count1('i am a crazy dog. 그래 미친개 맞아 미친개'))
 
-
-
+search
+"""
 def a_search ( target , word ):
 
     if type(target) == dict:
         return False
+
+    elif type(target) == list:
+        target5 = list()
+        for i in target:
+            target5.append(str(i))
+        target_string=','.join(target5)
+        a_find= target_string.count(word)
+        return bool(a_find)
+
     else:
         a_find= target.count(word)
         return bool(a_find)
@@ -26,14 +35,16 @@ def a_search ( target , word ):
 target1 = { 'a': 'b', 'c' : 'd'}
 target2 = 'abc'
 target3 = ['a','bc','d']
+target4 = [1,2,'abc',0.1,'efd']
 
 word1 = 'a'
 word2 = 'ab'
 word3 = 'd'
+word4 = 'e'
 
-print(a_search(target3, word3))
+print(a_search(target4, word4))
+
 """
-
 def ran(a,b,c):
     if type(a+b+c) == int:
         while a < b:
@@ -46,3 +57,4 @@ def ran(a,b,c):
         return "not range function"
 
 print (ran(20, 30, 4))
+"""

@@ -85,7 +85,7 @@ class Calculator():
         return  self.multiple
 
     def divide(self, x, y):
-        if x or y == 0
+        if x or y == 0:
             return "0"
         a = str(x/y)
         a = a.split('.')
@@ -102,7 +102,6 @@ class Calculator():
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
         return self.divide
     def expCalc(self,expStr):
-        expStr.split.('+','-','/','*')
 
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
         ex) expCalc('1+3-5')는 -1을 반환한다.
@@ -128,4 +127,4 @@ calc = Calculator()
 print(calc.add(1,2))
 print(calc.subtract(3,2))
 print(calc.multiply(5,2))
-print(calc.divide(313,-293))
+print(calc.divide(313,0))

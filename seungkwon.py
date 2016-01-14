@@ -62,34 +62,43 @@ class Calculator():
         ex) expCalc('1+3+5-0')는 9을 반환한다.
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
-        result = 0
 
         if type(expStr) != type("str"):
             return "문자열로 입력하세요"
 
-        #연산자들
-        exp = {'+', '-', '*', '/'}
-
         number = list()
         target = ""
         opp = list()
-        index = 0
-        midIndex = 0
+
         for op in expStr:
             ch = ord(op)
-            print(op, ch)
             if ch >= 48 and ch <= 57:
-                # print("====",type(str(chr(ch))),mid)
                 target += str(chr(ch))
-                print(target)
+
             elif ch == 42 or ch == 43 or ch == 45 or ch ==47:
                 opp.append(chr(ch))
                 number.append(int(target))
                 target = ""
 
-        print("result: number",number,"연산자 ", opp)
+        number.append(int(target))
+        midRes = number[0]
+        i = 0
+        while i < len(number)-1:
+            # print("i:",i, opp[i], number[i], i-1, len(number)-1)
+            if opp[i] == "+":
+                midRes += number[i+1]
+            elif opp[i] == "-":
+                midRes -= number[i+1]
+            elif opp[i] == "*":
+                midRes *= number[i+1]
+            elif opp[i] == "/":
+                if number[i+1] == 0:
+                    return "나누기 뒤에 0을 입력하면 안되요~!!"
+                midRes /= number[i+1]
 
-        return result
+            i+=1
+
+        return int(midRes)
 
     @elapsed_time
     def expCalcAdvanced(self,expStr):
@@ -108,8 +117,8 @@ class Calculator():
 calc = Calculator()
 # calc.add(1,2)
 # calc.subtract(3,2)
-calc.divide(5,4)
-calc.expCalc("12+3")
+#calc.divide(5,4)
+calc.expCalc("12+3-5/2+8")
 
 
 

@@ -187,13 +187,13 @@ class Calculator():
         pass
     def add(self, x, y):
         '두 매개변수 x, y를 더해서 결과를 정수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return x + y
+        return int(x + y)
     def subtract(self, x, y):
         '두 매개변수 x, y를 빼서 결과를 실수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
         return float(x - y)
     def multiply(self, x, y):
         '두 매개변수 x, y를 곱해서 결과를 정수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return x * y
+        return int(x * y)
     def divide(self, x, y):
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
         split_num = str(x/y).split(".")
@@ -213,7 +213,7 @@ class Calculator():
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
 
-        '''
+
         ints=[]
         cal_ints = []_
         ops=[]
@@ -222,14 +222,12 @@ class Calculator():
 
         for element in expStr:
             if type(element) == int:
-                integers += element
-                digit += 1
+                ints += element
             else:
 
-                for i in range(len(integers))
-                digit = 0
+
         return
-        '''
+
 
     def expCalcAdvanced(self,expStr):
         """숫자 표현식을 문자열로 받아서(이 때 *와 / 연산자는 우선순위로 계산함, ()괄호에 대한 우선순위도 매김)표현식에

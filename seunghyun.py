@@ -34,15 +34,9 @@ class Calculator():
         """
         return
 
-calc = Calculator()
-print(calc.divide(0,0))
-print(calc.divide(0,1))
-print(calc.divide(2,6))
-print(calc.divide(3,6))
-print(calc.divide(-3,2))
-print(calc.divide(-3.0,2.0))
-print(calc.divide(0.1,0.2))
-print(calc.divide(0.3,0.5))
-print(calc.divide(0.2,0.5))
+> > > calc = Calculator()
+> > > calc.add(1,2)
+> > > calc.subtract(3,2)
+
 
 

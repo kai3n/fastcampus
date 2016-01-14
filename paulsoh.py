@@ -1,5 +1,5 @@
 test_list = [1,2,'abc', 0.1, 'efd']
-query_for_test_list = 'a'
+query_for_test_list = 'bc'
 
 
 
@@ -16,12 +16,8 @@ def search(sentance, word):
                 return True
     return False
 
-print(search(test_list, query_for_test_list))
-
-
 def word_count(word):
     return len(word.split())
-
 
 def range_function(a, *args):
     a = int(a)
@@ -79,16 +75,58 @@ def range_function(a, *args):
         return False
 
 
-print(range_function(5))
-print(range_function(-5))
-print(range_function(0))
+# A = 65 a = 97 Z = 90 z = 122
 
-print(range_function(10,7))
-print(range_function(11,22))
+################################################################################################
+###  my_lower fucntion ; takes str as input and lower cases all the letters inside the str  ###
+################################################################################################
+def my_lower(string):
+    buf = ''
+    if string is None :
+        return buf
+    for char in string:
+        if ord('A') <= ord(char) <= ord('Z'): # Upper case character
+            buf += chr(ord(char)+32)
+        else:
+            buf += char
+    return buf
+############################################################################################
 
-print(range_function(0,10,2))
-print(range_function(0,10,-2))
-print(range_function(0, -10, -2))
+
+
+################################################################################################
+###  my_upper fucntion ; takes str as input and upper cases all the letters inside the str  ###
+################################################################################################
+def my_upper(string):
+    buf = ''
+    if string is None :
+        return buf
+    for char in string:
+        if ord('a') <= ord(char) <= ord('z'): # Upper case character
+            buf += chr(ord(char)-32)
+        else:
+            buf += char
+    return buf
+############################################################################################
+
+
+## test / debugging sequence ##
+
+print(my_lower('heLLo mY namE iS Paul soh'))
+print(my_upper('heLLo mY namE iS Paul soh d8d7Cdf7gFddvDDF'))
+
+
+
+# print(range_function(5))
+# print(range_function(-5))
+# print(range_function(0))
+#
+# print(range_function(10,7))
+# print(range_function(11,22))
+#
+# print(range_function(0,10,2))
+# print(range_function(0,10,-2))
+# print(range_function(0, -10, -2))
 
 
 test_string = 'what is my name my name is paul soh hello world'
@@ -99,11 +137,8 @@ query_for_test_string = 'name'
 test_dict = {'a':'b', 'c':'d'}
 query_for_test_dict = 'a'
 
-#print(word_count(test_string))
+print(search(test_list, query_for_test_list))
 print(search(test_string, query_for_test_string))
 print(search(test_dict, query_for_test_dict))
 
-
-#print(dosearch(string, 'is'))
-#print(dosearch(string, 'iadfasdfas'))
-
+print(my_lower('aBcDeFgHiJ'))

@@ -196,14 +196,22 @@ class Calculator():
         return int(x * y)
     def divide(self, x, y):
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
-        split_num = str(x/y).split(".")
-        num = int(split_num[0])
-        digit_to_compare = int(split_num[1][0])
+        try:
+            split_num = str(x/y).split(".")
+            num = int(split_num[0])
+            digit_to_compare = int(split_num[1][0])
 
-        if digit_to_compare >= 5:
-            return num +1
+            if num >= 0:
+                if digit_to_compare >= 5:
+                    return num + 1
+                return num
 
-        return num
+            else:
+                if digit_to_compare >= 5:
+                    return num - 1
+                return num
+
+        except ZeroDivisionError: return "Division by zero."
 
     def expCalc(self,expStr):
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
@@ -213,20 +221,28 @@ class Calculator():
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
 
-
-        ints=[]
-        cal_ints = []_
+        ints = []
         ops=[]
-        digit=0
-        sum = 0
+        cal = ""
+        empty_string = ""
 
-        for element in expStr:
-            if type(element) == int:
-                ints += element
+        for elem in expStr:
+            if elem.isdigit():
+                empty_string += str(elem)
+
             else:
+                ints.append(empty_string)
+                empty_string = ""
+                ops += str(elem)
+
+        for i in ints:
+            caldf = eval(ints[i] + ops[i] + ints[i+1])
+            print(caldf)
+
+        print(ints)
+        print(ops)
 
 
-        return
 
 
     def expCalcAdvanced(self,expStr):
@@ -245,5 +261,8 @@ class Calculator():
 calc = Calculator()
 print(calc.add(1,2))
 calc.subtract(3,2)
-print(calc.multiply(4,3))
-print(calc.divide(18,5))
+
+print(calc.divide(0.3,0.5))
+
+
+calc.expCalc("4+3+123/2")

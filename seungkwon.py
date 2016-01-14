@@ -5,7 +5,7 @@ def elapsed_time(func):
         start = time.time()
         result = func(*args, **kwargs)
         end = time.time()
-        print((end - start)/24*60*60)
+        print("함수이름: ",func.__name__,", 걸린시간:" ,(end - start)/24*60*60 ,"초")
         return result
     return elsapse
 

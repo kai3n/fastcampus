@@ -50,6 +50,13 @@ def ran(a,b,c):
     if type(a and b and c) == int:
         e_list = []
         while a < b:
+            if c <= 0:
+                return "can`t calculating"
+            e_list.append(a)
+            a = a + c
+        else a > b :
+             if c >= 0:
+                return "can`t calculating"
             e_list.append(a)
             a = a + c
         else:
@@ -57,4 +64,4 @@ def ran(a,b,c):
     else:
         return "not range function"
 
-print (ran(20, 30, 4))
+print (ran(20, 28, 4))

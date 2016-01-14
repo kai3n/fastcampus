@@ -187,17 +187,31 @@ class Calculator():
         pass
     def add(self, x, y):
         '두 매개변수 x, y를 더해서 결과를 정수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return x + y
+        return int(x + y)
     def subtract(self, x, y):
         '두 매개변수 x, y를 빼서 결과를 실수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return x - y
+        return float(x - y)
     def multiply(self, x, y):
         '두 매개변수 x, y를 곱해서 결과를 정수형으로 반환하는 함수이다. 난이도:★☆☆☆☆'
-        return x + y
+        return int(x * y)
     def divide(self, x, y):
         '두 매개변수 x, y를 나눠서 결과를 소수점 첫째자리에서 반올림하여 정수형으로 반환하는 함수이다. 난이도:★★☆☆☆'
-        result = round(x/y)
-        return result
+
+        split_num = str(x/y).split(".")
+        num = int(split_num[0])
+        digit_to_compare = int(split_num[1][0])
+
+        if num > 0:
+            if digit_to_compare >= 5:
+                return num + 1
+
+            return num
+        else:
+            if digit_to_compare >= 5:
+                return num - 1
+
+            return num
+
     def expCalc(self,expStr):
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
         ex) expCalc('1+3-5')는 -1을 반환한다.
@@ -205,14 +219,25 @@ class Calculator():
         ex) expCalc('1+3+5-0')는 9을 반환한다.
         ex) expCalc('4+3+5/3')는 4을 반환한다.
         """
-        integers=[]
-        operators=[]
-        digit=0
+        '''
+        ints = []
+        ops=[]
+        cal_result = ""
+        empty_string = ""
+
         for element in expStr:
+            try:
+                elem = int(element)
+                empty_string += str(elem)
+            except SyntaxError:
+                ints.append(empty_string)
+                empty_string = ""
+                ops += elem
 
-            if type(element) == int:
+        cal_result=""
+        for range(len(ints))
+        '''
 
-        return
     def expCalcAdvanced(self,expStr):
         """숫자 표현식을 문자열로 받아서(이 때 *와 / 연산자는 우선순위로 계산함, ()괄호에 대한 우선순위도 매김)표현식에
         대한 결과를 소수점 둘째자리에서 반올림하여 실수형으로 변환하는 함수이다. 난이도:★★★★★
@@ -229,3 +254,5 @@ class Calculator():
 calc = Calculator()
 print(calc.add(1,2))
 calc.subtract(3,2)
+print(calc.multiply(4,3))
+print(calc.divide(-16,5))

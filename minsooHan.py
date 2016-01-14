@@ -99,7 +99,7 @@ class Calculator():
     def add(self, x, y):
         add_result = x + y
 
-        return int(add_result)
+        return add_result
 
     def subtract(self, x, y):
         sub_result = x-y
@@ -110,18 +110,34 @@ class Calculator():
         return int(mul_result)
 
     def divide(self, x, y):
-        div_result = int(x/y)
-        div_int = x/y
 
-        float_Value = div_int - div_result
+        if y!=0:
+            div_result = int(x/y)
+            div_int = x/y
 
-        if float_Value >=0.5:
-            div_result+=1
-            return div_result
-        else :
-            return div_result
+            if div_int >0:
+                float_Value = div_int - div_result
 
-        return
+
+                if float_Value >=0.5:
+                    div_result+=1
+                    return int(div_result)
+                else :
+                    return int(div_result)
+
+            else:
+                float_Value = div_int - div_result
+
+                if float_Value<=-0.5:
+                    div_result-=1
+                    return int(div_result)
+                else:
+                    return int(div_result)
+        else:
+            return False
+
+
+
     def expCalc(self,expStr):
         """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
         ex) expCalc('1+3-5')는 -1을 반환한다.
@@ -144,5 +160,5 @@ class Calculator():
         return
 
 calc = Calculator()
-print(calc.divide(44,7))
+print(calc.divide(2,6))
 print(calc.subtract(3,6.5))

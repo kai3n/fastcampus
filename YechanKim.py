@@ -32,7 +32,6 @@ def search(string,word):
 
 print(search('abc','a'))  '''
 class Calculator():
-
      def __init__(self):
          pass
      def add(self, x, y):
@@ -57,11 +56,16 @@ class Calculator():
 
              return third_experiment
 
-         else :
+         elif -5 < second_experiment < 5:
              third_experiment = int(x/y)
 
              return third_experiment
 
+         else:
+
+             third_experiment = int(x/y)-1
+
+             return third_experiment
 
      def expCalc(self,expStr):
          """숫자 표현식을 문자열로 받아서 표현식에 대한 결과를 정수형으로 변환하는 함수이다. 난이도:★★★☆☆'
@@ -69,19 +73,15 @@ class Calculator():
          ex) expCalc('1+3*5')는 20을 반환한다.
          ex) expCalc('1+3+5-0')는 9을 반환한다.
          ex) expCalc('4+3+5/3')는 4을 반환한다.
-         """
+"""
          number = []
          operation =  []
 
-#         for first_validation in expStr:
+         for first_validation in expStr:
 
- #            if type(first_validation) == int:
+             if type(first_validation) == int:
 
-
-  #               number =+ first_validation
-
-#            elif type(first_validation) == str:
-
+                 number =+ first_validation
 
 
 
@@ -108,4 +108,4 @@ calc = Calculator()
 print(calc.add(1,2))
 print(calc.subtract(3,2))
 print(calc.multiply(3,2))
-print(calc.divide(7,3))
+print(calc.divide(7,-3))

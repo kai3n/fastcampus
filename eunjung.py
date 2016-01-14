@@ -1,4 +1,4 @@
-
+"""
 # 1. 문장이 들어오면 해당 문장을 단어별로 끊어, 단어 갯수 리턴
 def word_count(word):
     words_list = word.split(" ")
@@ -35,7 +35,7 @@ def search(string, word):
 
 #print(search({'a':'b'}, "COPY"))
 print(search([1,2,3,4,5,'apple',], 'a'))
-"""
+
 
 
 # 3. range 함수 구현!!!!
@@ -67,12 +67,46 @@ def make_range(start, end, step):
 
 
 print(make_range(5,-10,-1))
-
+"""
 
 # 4. upper 와 lower
 
 
 
+"""
+
+
+
+def search(string, word):
+
+    if type(string) == str:
+        new_list = string.split(" ")
+    elif type(string) == dict:
+        return False
+    else:
+        new_list = list(string)
+
+    word = str(word).lower()
+
+    for val in new_list:
+        val = str(val)
+        val = str(val).lower()
+        if val == word:
+            return True
+        else:
+            for count in range(0,len(val)):
+                length = len(val)
+                combine = val[count]
+                if combine == word:
+                    return True
+                else:
+                    while True:
+                        combine += val[]
+
+    return False
+
+#print(search({'a':'b'}, "COPY"))
+print(search([1,2,3,4,5,'apple',], 'a'))
 
 
 

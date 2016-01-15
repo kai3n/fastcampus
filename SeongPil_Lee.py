@@ -72,7 +72,8 @@ Carson’s oddball campaign — which included days-long debates about whether, 
 
 import re
 
-b = re.findall("[a-zA-Z0-9_.-]+@[a-zA-Z]+.[a-zA-Z]+", a)
+b = re.findall("[a-zA-Z0-9_.-]+@[a-zA-Z]+[.][a-zA-Z]?[a-zA-Z]?[.]?[a-zA-Z]?[a-zA-Z]?[a-zA-Z]?", a)
+print(b)
 print(b)
 #TODO: 8이 나와야함
 print(len(b))

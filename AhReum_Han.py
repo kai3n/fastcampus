@@ -205,6 +205,6 @@ import re
 
 b=re.findall("(\w+[\w\.]*)@(\w+[\w\.]*)\.([A-Za-z]+)",a)
 print(len(b))
-print(b)
+#print(b)
 # 8을 반환하면 성공입니다!.
 

@@ -208,6 +208,6 @@ Carson’s oddball campaign — which included days-long debates about whether, 
 
 import re
 
-b= re.findall("", a)
+b= re.findall("\S+@\S+", a)
 print(len(b))
 # 8을 반환하면 성공입니다!

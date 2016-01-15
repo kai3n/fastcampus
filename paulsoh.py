@@ -313,11 +313,11 @@ As the leading candidates feuded Thursday, Bush interjected to call for a cease-
 “Everybody on this stage is better than [Democratic front-runner] Hillary Clinton,” he said. “I think the focus ought to be on making sure that we leave this nomination process, as wild and woolly as it’s going to be . . . to unite behind the winner so we can defeat Hillary Clinton, because she is a disaster.”
 [Bush and his super PAC are on the attack – but aiming at different targets] auction@auction.co.kr
 Ben Carson, the mild-mannered neurosurgeon, seconded Bush’s call. “We have to stop this because, you know, if we manage to damage ourselves and we lose the next election and a progressive gets in there and they get two or three Supreme Court picks, this nation is over as we know it.”
-Carson’s oddball campaign — which included days-long debates about whether, as a young man, he really stabbed a friend in the stomach or menaced his mother with a hammer — now seems to be fading. """
+Carson’s oddball campaign — which included days-long runsorun@naver.c$c debates about whether, as a young man, he really stabbed a friend in the stomach or menaced his mother with a hammer — now seems to be fading. """
 
 import re
 
-b = re.findall('[a-zA-Z0-9_.]+@[a-zA-Z0-9_.]+.', a)
+b = re.findall('[a-zA-Z0-9_.]+@[a-zA-Z0-9_]+[.]+[a-zA-Z0-9_.]+', a)
 
 print(b)
 print(len(b))

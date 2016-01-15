@@ -406,8 +406,36 @@ Ben Carson, the mild-mannered neurosurgeon, seconded Bush’s call. “We have t
 Carson’s oddball campaign — which included days-long debates about whether, as a young man, he really stabbed a friend in the stomach or menaced his mother with a hammer — now seems to be fading. """
 
 reg = "[A-Za-z0-9-_.]+@[A-Za-z0-9-._]+"
-reg1 ="[\S]+@[\S]+"
+reg1 ="\S+@\S+"
 print(re.findall(reg, a))
 print(re.findall(reg1, a))
 
+# ######################################################################################################################
+'''
+poem = "There was a young lady named Bright"
+fout = open('relativity', 'wt')
+fout.write(poem)
+fout.close()
 
+fin = open('relativity', 'rb')
+poem = fin.read()
+fin.close()
+len(poem)
+print(poem)
+'''
+
+import pickle
+import datetime
+now1 = datetime.datetime.utcnow()
+pickled = pickle.dumps(now1)
+fout = open("pickledtime", "wb")
+fout.write(pickled)
+fout.close()
+
+fin=open("pickledtime", 'rb')
+pickled=fin.read()
+now2 = pickle.loads(pickled)
+fin.close()
+
+print(now1)
+print(now2)

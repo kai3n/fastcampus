@@ -76,10 +76,11 @@ Ben Carson, the mild-mannered neurosurgeon, seconded Bush’s call. “We have t
 Carson’s oddball campaign — which included days-long debates about whether, as a young man, he really stabbed a friend in the stomach or menaced his mother with a hammer — now seems to be fading. """
 
 
-find = re.findall(r"\w+[\w\.]*[\w\-]*@\w+[\w\.]*\.[A-Za-z]+",a)
-
+find = re.findall("\w+[\w\.]*[\w\-]*@\w+[\w\.]*\.[A-Za-z]+",a)
+second = re.findall("[\w\_\-\.]*@\w*[\w\.]+[\w]+",a)
 
 print(find)
+print(second)
 
 
 

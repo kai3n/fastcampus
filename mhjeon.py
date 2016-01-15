@@ -406,6 +406,8 @@ Ben Carson, the mild-mannered neurosurgeon, seconded Bush’s call. “We have t
 Carson’s oddball campaign — which included days-long debates about whether, as a young man, he really stabbed a friend in the stomach or menaced his mother with a hammer — now seems to be fading. """
 
 reg = "[A-Za-z0-9-_.]+@[A-Za-z0-9-._]+"
+reg1 ="[\S]+@[\S]+"
 print(re.findall(reg, a))
+print(re.findall(reg1, a))
 
 

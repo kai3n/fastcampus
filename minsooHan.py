@@ -243,6 +243,6 @@ Carson’s oddball campaign — which included days-long debates about whether, 
 
 import re
 
-b= re.findall("([\S]+@+[\S]+.[a-z]{3})", a)
+b= re.findall("\S+@+\w+.[a-z]+", a)
 print(b)
 # 8을 반환하면 성공입니다!

@@ -405,7 +405,7 @@ As the leading candidates feuded Thursday, Bush interjected to call for a cease-
 Ben Carson, the mild-mannered neurosurgeon, seconded Bush’s call. “We have to stop this because, you know, if we manage to damage ourselves and we lose the next election and a progressive gets in there and they get two or three Supreme Court picks, this nation is over as we know it.”
 Carson’s oddball campaign — which included days-long debates about whether, as a young man, he really stabbed a friend in the stomach or menaced his mother with a hammer — now seems to be fading. """
 
-reg = "[A-Za-z0-9-_]+@[A-Za-z0-9-._]+"
+reg = "[A-Za-z0-9-_.]+@[A-Za-z0-9-._]+"
 print(re.findall(reg, a))
 
 

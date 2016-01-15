@@ -297,8 +297,9 @@ Carson’s oddball campaign — which included days-long debates about whether, 
 
 import re
 
-b= re.findall("([^\s]*@\w*\.(\S)*)", a)
+b= re.findall("([^\s]*@\w*\.\S*)", a)
 print(len(b))
+print(b)
 # 8을 반환하면 성공입니다!
 
 

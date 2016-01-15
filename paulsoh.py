@@ -317,7 +317,7 @@ Carson’s oddball campaign — which included days-long debates about whether, 
 
 import re
 
-b = re.findall('[a-zA-Z0-9_.]+@[a-zA-Z0-9_.]+.', a)
+b = re.findall('[a-zA-Z0-9_.]+@[a-zA-Z0-9_]+[.]+[a-zA-Z0-9_.]+', a)
 
 print(b)
 print(len(b))

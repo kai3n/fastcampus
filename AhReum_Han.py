@@ -203,7 +203,8 @@ Carson’s oddball campaign — which included days-long debates about whether, 
 
 import re
 
-b= re.findall("((\w+[\w\.]*)@(\w+[\w\.]*)\.)",a)
+b=re.findall("(\w+[\w\.]*)@(\w+[\w\.]*)\.([A-Za-z]+)",a)
 print(len(b))
+print(b)
 # 8을 반환하면 성공입니다!.
 

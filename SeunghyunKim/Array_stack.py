@@ -1,5 +1,10 @@
 class Empty(Exception):
-    pass
+    ArrayStack.pop(x)
+        if x == 0:
+            print("error")
+        else:
+            pass
+
 
 class ArrayStack:
 
@@ -10,9 +15,9 @@ class ArrayStack:
         return len(x)
     def is_empty(x):
         if x!=0:
-            print("true")
+            return True
         else:
-            print("false")
+            return False
     def push(x, e):
         x.append(e)
     def top(x):
@@ -21,12 +26,3 @@ class ArrayStack:
         n = x[len(x)-1]
         del x[len(x)-1]
         return n
-
-Array_test=[]
-ArrayStack.push(Array_test, 3)
-ArrayStack.push(Array_test, 4)
-ArrayStack.push(Array_test, 5)
-print(Array_test)
-ArrayStack.is_empty(Array_test)
-ArrayStack.pop(Array_test)
-print(Array_test)

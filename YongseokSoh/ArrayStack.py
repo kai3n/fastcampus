@@ -2,7 +2,7 @@ class Empty(Exception):
     print("Empty Array Stack!!!")
 
 
-class AttayStack:
+class ArrayStack:
 
     def __init__(self):
         self.data = []
@@ -20,7 +20,10 @@ class AttayStack:
         return self.data.append(e)
 
     def top(self):
-        return self.data[len(self.data)-1]
+        if len(self.data) is 0:
+            raise Empty(Exception)
+        else:
+            return self.data[-1]
 
     def pop(self):
         if len(self.data) is 0:
@@ -35,7 +38,7 @@ class AttayStack:
             return pop_data
 
 
-S = AttayStack();
+S = ArrayStack();
 
 S.push(5)
 S.pop()

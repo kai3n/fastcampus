@@ -47,3 +47,5 @@ s.pop()
 s.push(6)
 s.push(8)
 s.pop()
+
+print("hello")

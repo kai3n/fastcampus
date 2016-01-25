@@ -7,16 +7,12 @@ def judge(bracket):
     for c in bracket:
         if c == '(' or c == '{' or c == '[':
             S.push(c)
-            print(S.data)
         elif c == ')' and S.top() == '(':
-            print(S.pop())
-            print(S.data)
+            S.pop()
         elif c == '}' and S.top() == '{':
-            print(S.pop())
-            print(S.data)
+            S.pop()
         elif c == ']' and S.top() == '[':
-            print(S.pop())
-            print(S.data)
+            S.pop()
         else:
             return 'Incorrect'
     for i in S.data:

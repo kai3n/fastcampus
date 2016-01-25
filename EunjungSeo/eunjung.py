@@ -223,7 +223,7 @@
 
 #########################################################################################
 
-a = """ Rubio went after Cruz at the end of the second hour of the debate, saying that Cruz had changed his positions on immigration, trade and the military to follow shifting political winds.“I saw you on the Senate floor flip your vote on crop insurance, because they told you it would help you in Iowa,” Rubio said. “That is not consistent conservatism,” he added, using Cruz’s own slogan against him.
+a =  """ Rubio went after Cruz at the end of the second hour of the debate, saying that Cruz had changed his positions on immigration, trade and the military to follow shifting political winds.“I saw you on the Senate floor flip your vote on crop insurance, because they told you it would help you in Iowa,” Rubio said. “That is not consistent conservatism,” he added, using Cruz’s own slogan against him.
 Cruz responded: “I appreciate you dumping your oppo [opposition] research on the debate stage,” he said, as the crowd in North Charleston, S.C., booed. “At least half the things Marco said were false.”
 “You think they like each other?” Trump quipped, appearing amused as the two rivals sought to kneecap each other.”
 [Still don’t think Donald Trump can win? This chart should convince you.]

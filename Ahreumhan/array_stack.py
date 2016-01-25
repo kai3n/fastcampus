@@ -11,14 +11,18 @@ class ArrayStack:
         return self.count
 
     def is_empty(self):
-        return self._data == []
+        a = len(self._data)
+        if a == 0:
+          return True
+
+        else:
+          return False
 
     def push(self, e):
         self._data.append(e)
 
     def top(self):
         self._data[len(self._data)-1]
-
 
     def pop(self):
 

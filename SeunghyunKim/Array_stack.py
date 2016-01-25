@@ -1,6 +1,7 @@
-class Empty(Exception):
-    print("error")
-
+class Empty:
+    def error(x):
+        if(len(x)==0):
+            print("error")
 
 class ArrayStack:
 
@@ -19,6 +20,9 @@ class ArrayStack:
     def top(x):
         return x[len(x)-1]
     def pop(x):
-        n = x[len(x)-1]
-        del x[len(x)-1]
-        return n
+        if len(x) == 0:
+            raise Empty.error(x)
+        else:
+            n = x[len(x)-1]
+            del x[len(x)-1]
+            return n

@@ -22,5 +22,5 @@ def judge(bracket):
             continue
     return 'Correct'
 
-c1 = '('
+c1 = '((){[]}'
 print(judge(c1))

@@ -25,5 +25,6 @@ class ArrayStack:
         self._data[len(self._data)-1]
 
     def pop(self):
-
+        self._data[len(self._data)-1]
+        del self._data[len(self._data)-1]
         return self._data[len(self._data)-1]

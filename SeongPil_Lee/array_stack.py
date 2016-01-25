@@ -14,16 +14,13 @@ class ArrayStack:
     def push(self, e):
         self.data.append(e)
     def top(self):
-        return self.data[len(self.data)-1]
+        return self.data[-1]
     def pop(self):
         if len(self.data) == 0:
             print('error')
         else:
-            a = self.data[len(self.data) -1]
-            self.data.remove(self.data[len(self.data)-1])
+            a = self.data[-1]
+            self.data.pop()
             return a
 
-S = ArrayStack()
 
-S.push(4)
-print(S.data)

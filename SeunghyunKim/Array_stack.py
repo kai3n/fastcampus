@@ -1,5 +1,10 @@
 class Empty(Exception):
-    pass
+    ArrayStack.pop(x)
+        if x == 0:
+            print("error")
+        else:
+            pass
+
 
 class ArrayStack:
 
@@ -10,9 +15,9 @@ class ArrayStack:
         return len(x)
     def is_empty(x):
         if x!=0:
-            print("true")
+            return True
         else:
-            print("false")
+            return False
     def push(x, e):
         x.append(e)
     def top(x):

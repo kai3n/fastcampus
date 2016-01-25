@@ -245,4 +245,35 @@ import re
 
 b= re.findall("\S+@+\w+.[a-z]+", a)
 print(b)
-# 8을 반환하면 성공입니다!
+# 8을 반환하면 성공입니다!2
+
+#########################################################################################
+
+class ArrayStack:
+    def __init__(self):
+        self.data = []
+
+    def __len__(self):
+        a = len(self.data)
+        return a
+
+    def push(self, num):
+        self.data.append(num)
+        return self.data
+
+    def pop(self):
+        b = self.data[0]
+        self.data.remove(b)
+        return b
+
+    def is_empty(self):
+        if len(self.data)==0:
+            return True
+        else:
+            return False
+
+    def top(self):
+        b = len(self.data)
+        return self.data[b-1]
+
+

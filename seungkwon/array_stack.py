@@ -5,16 +5,14 @@ class stack_custom():
 
 
     def __len__(self):
-        return int(self.__len__)
+        return len(self._data)
 
     def __init__(self):
-
         self._data = list()
         self.__len__ = 0
 
     def push(self, data):
         try:
-            print(data)
             self._data.append(data)
         except:
             raise Exception
@@ -39,9 +37,38 @@ class stack_custom():
     def top(self):
         return self._data[self.__len__-1]
 
+# mStack = stack_custom()
+# mStack.push(5)
+# mStack.push(3)
+# mStack.push(3)
+# mStack.push(3)
+# mStack.pop()
+# print("ddd----------r",len(mStack))
+# print("len",mStack.__len__)
+# print(mStack.is_empty())
+# print (mStack._data)
+# print(len(mStack._data))
+
+fir = "()(()){([])}"
+sec = "((()(()){([)])}))"
+third = ")(()){([])}"
+
 mStack = stack_custom()
-mStack.push(5)
-mStack.push(3)
-mStack.pop()
-print(mStack.is_empty())
-print (mStack._data)
+for a in third:
+    if a == "(" or a == "{" or a == "[":
+        mStack.push(a)
+    elif mStack.is_empty():
+        if mStack.top() == "(" and a == ")":
+            mStack.pop()
+        elif mStack.top() == "{" and a == "}":
+            mStack.pop()
+        elif mStack.top() == "[" and a == "]":
+            mStack.pop()
+    else:
+        mStack.push(a)
+    print(mStack._data)
+
+if len(mStack) == 0:
+    print(True)
+else:
+    print(False)

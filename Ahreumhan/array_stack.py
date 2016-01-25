@@ -11,8 +11,8 @@ class ArrayStack:
         return self.count
 
     def is_empty(self):
-        a = len(self._data)
-        if a == 0:
+
+        if len(self._data) == 0:
           return True
 
         else:

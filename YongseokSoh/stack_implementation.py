@@ -20,7 +20,7 @@ class AttayStack:
         return self.data.append(e)
 
     def top(self):
-        return self.data[len(self.data)]
+        return self.data[len(self.data)-1]
 
     def pop(self):
         if self.data is False:
@@ -61,3 +61,4 @@ S.push(8)
 print(S.data)
 print(S.pop())
 print(S.data)
+print(S.top())

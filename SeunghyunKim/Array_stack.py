@@ -1,9 +1,5 @@
 class Empty(Exception):
-    ArrayStack.pop(x)
-        if x == 0:
-            print("error")
-        else:
-            pass
+    print("error")
 
 
 class ArrayStack:

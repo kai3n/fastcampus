@@ -22,9 +22,13 @@ class ArrayStack:
         self._data.append(e)
 
     def top(self):
-        self._data[len(self._data)-1]
+        return self._data[len(self._data)-1]
 
     def pop(self):
-        self._data[len(self._data)-1]
-        del self._data[len(self._data)-1]
+
+        if len(self._data) == 0:
+            raise Exception
+        else:
+            self._data[len(self._data)-1]
+            del self._data[len(self._data)-1]
         return self._data[len(self._data)-1]

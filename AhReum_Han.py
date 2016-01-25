@@ -201,10 +201,80 @@ As the leading candidates feuded Thursday, Bush interjected to call for a cease-
 Ben Carson, the mild-mannered neurosurgeon, seconded Bush’s call. “We have to stop this because, you know, if we manage to damage ourselves and we lose the next election and a progressive gets in there and they get two or three Supreme Court picks, this nation is over as we know it.”
 Carson’s oddball campaign — which included days-long debates about whether, as a young man, he really stabbed a friend in the stomach or menaced his mother with a hammer — now seems to be fading. """
 
-import re
+# import re
+#
+# b=re.findall("(\w+[\w\.]*)@(\w+[\w\.]*)\.([A-Za-z]+)",a)
+# print(len(b))
+# #print(b)
+# # 8을 반환하면 성공입니다!.
 
-b=re.findall("(\w+[\w\.]*)@(\w+[\w\.]*)\.([A-Za-z]+)",a)
-print(len(b))
-#print(b)
-# 8을 반환하면 성공입니다!.
+#
+# poem = "There was a young lady named Bright,"
+#
+# print(len(poem))
+#
+# fout=open('relativity','wt')
+# print(fout.write(poem))
+#
+# poem = ''
+#
+# fin = open('relativity','rb')
+#
+# for line in fin:
+#     poem += line
+#     fin.close()
+#     print(len(poem))
+#
 
+import pickle
+import datetime
+
+f = open('/Users/Autumn/Desktop','t')
+f.read(5)
+
+# now1 = datetime.datetime.utcnow()
+#
+# pickled = pickle.dumps(now1)
+#
+# out = open()
+#
+# del f
+# f = open('/Users/Autumn/Desktop','t')
+# other = pickle.load(f)
+#
+# print(other)
+#
+#
+# now2 = pickle.loads(pickled)
+#
+# now1
+# datetime.datetime(2016,6,22,23,24,15,19,195222)
+# now2
+# datetime.datetime(2016,6,22,23,24,15,19,195222)
+
+
+class Empty(Exception):
+    pass
+
+class ArrayStack:
+
+    def __init__(self):
+        self._data = []
+        self.count = 0
+
+    def __len__(self):
+        return self.count
+
+    def is_empty(self):
+        return self._data == []
+
+    def push(self, e):
+        self._data.append(e)
+
+    def top(self):
+        self._data[len(self._data)-1]
+
+
+    def pop(self):
+
+        return self._data[len(self._data)-1]

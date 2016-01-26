@@ -31,9 +31,9 @@ class array_queue():
 
     def is_empty(self):
         if self.size == 0:
-            return False
-        else:
             return True
+        else:
+            return False
 
 mQueue = array_queue()
 print(mQueue.is_empty())
@@ -50,9 +50,3 @@ print(mQueue.is_empty())
 print(len(mQueue))
 mQueue.dequeue()
 print(mQueue.first())
-
-def firstOperationCharacter(expr):
-
-    return exec(expr)
-
-print("-- n",firstOperationCharacter("(2 + 2) * 2"))

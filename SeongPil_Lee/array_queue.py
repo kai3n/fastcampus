@@ -26,12 +26,7 @@ class ArrayQueue:
             print('Error')
         else:
             a = self.first()
-            for i in range(self.__len__()):
-                if self._data[i+1] == None:
-                    break
-                else:
-                    self._data[i] = self._data[i+1]
-            self._data[-1] = None
+            self._data = self._data[1:]
             return a
 
     def enqueue(self, e):
@@ -41,4 +36,7 @@ s = ArrayQueue()
 
 s.enqueue(2)
 s.enqueue(3)
-s.enqueue(6s)
+s.enqueue(6)
+
+s.dequeue()
+print(s._data)

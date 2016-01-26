@@ -2,7 +2,6 @@
 class Empty(Exception):
     pass
 
-
 class ArrayStack:
     def __init__(self):
         self.data = []
@@ -12,22 +11,45 @@ class ArrayStack:
 
     def push(self, num):
         self.data.append(num)
-        return self.data
 
     def pop(self):
-        if len(self.data)==0:
-            raise Empty('No Value')
+        how_long = len(self.data)
+        if how_long == 0:
+            return "Error"
         else :
-            pop_data = self.data[:len(self.data)-1]
-            return pop_data
+            re_data = self.data[how_long-1]
+            self.data = self.data[:how_long-1]
+            return re_data
+
 
     def is_empty(self):
-        if len(self.data)==0:
-            return True
-        else:
+        if self.data:
             return False
+        else :
+            return True
 
     def top(self):
-        b = len(self.data)
-        return self.data[b-1]
+       if len(self.data)==0:
+           return print("Error")
+       else:
+           return self.data[len(self.data)-1]
 
+
+S=ArrayStack()
+S.push(5)
+S.push(3)
+print(len(S))
+print(S.pop())
+print(S.is_empty())
+print(S.pop())
+print(S.is_empty())
+print(S.pop())
+S.push(7)
+S.push(9)
+print(S.top())
+S.push(4)
+print(len(S))
+print(S.pop())
+S.push(6)
+S.push(8)
+print(S.pop())

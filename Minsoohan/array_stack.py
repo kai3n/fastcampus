@@ -1,19 +1,25 @@
+
+class Empty(Exception):
+    pass
+
+
 class ArrayStack:
     def __init__(self):
         self.data = []
 
     def __len__(self):
-        a = len(self.data)
-        return a
+        return len(self.data)
 
     def push(self, num):
         self.data.append(num)
         return self.data
 
     def pop(self):
-        b = self.data[0]
-        self.data.remove(b)
-        return b
+        if len(self.data)==0:
+            raise Empty('No Value')
+        else :
+            pop_data = self.data[:len(self.data)-1]
+            return pop_data
 
     def is_empty(self):
         if len(self.data)==0:
@@ -22,7 +28,6 @@ class ArrayStack:
             return False
 
     def top(self):
-        c = len(self.data)
-        return self.data[c-1]
+        b = len(self.data)
+        return self.data[b-1]
 
-###

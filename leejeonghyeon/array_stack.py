@@ -7,21 +7,28 @@ class ArrayStack:
         self._data = []
 
     def __len__(self):
-        pass
+        return len(self._data)
 
     def is_empty(self):
-        if len(self._data) ==0:
+        if len(self._data) <= 0:
             return True
+        else:
+            return False
 
     def push(self, e):
-        stack_len =len(self._data)
-        self._data.insert((stack_len+1),e)
+        self._data.insert((len(self._data)+1), e)
         return self._data
 
     def top(self):
-        return self._data[len(self._data)-1]
+        if len(self._data) <= 0:
+            raise Empty("error")
+        else:
+            return self._data[-1]
 
     def pop(self):
-        pop_e = self._data[len(self._data)-1]
-        del self._data[len(self._data)-1]
+        if len(self._data) <= 0:
+            raise Empty("error")
+        else:
+            pop_e = self._data[-1]
+            del self._data[-1]
         return pop_e

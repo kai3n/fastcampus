@@ -16,10 +16,10 @@ class Linkedlist:
         return len(self)
 
     def is_empty(self):
-        pass
-
-    def push(self, e):
-        pass
+        if self._size == 0:
+            return True
+        else:
+            return False
 
     def add_first(self, e):
         pass
@@ -34,7 +34,7 @@ class Linkedlist:
         pass
 
     def head(self):
-        pass
+        return self._head
 
     def tail(self):
-        pass
+        return self._tail

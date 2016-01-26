@@ -15,18 +15,18 @@ class ArrayStack:
         else:
             return False
 
-    def push(self, e):
+    def push(self, e):                              # S라는 스택객체의 가장 위에 e라는 엘리먼트를 더한다
         self._data.insert((len(self._data)+1), e)
         return self._data
 
-    def top(self):
-        if len(self._data) <= 0:
+    def top(self):                                  # S라는 스택객체의 가장 위의 엘리먼트를 삭제하고 반환
+        if self.is_empty():
             raise Empty("error")
         else:
             return self._data[-1]
 
-    def pop(self):
-        if len(self._data) <= 0:
+    def pop(self):                                  # S라는 스택객체의 가장 위의 엘리먼트를 삭제하고 반환
+        if self.is_empty():
             raise Empty("error")
         else:
             pop_e = self._data[-1]

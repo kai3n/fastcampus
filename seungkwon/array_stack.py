@@ -70,6 +70,11 @@ class stack_custom():
         self.size += 1
 
     def is_empty(self):
+        """
+        없으면 true
+        있으면 False로 수정해야함 지금 반대로 했음 ㅡㅡ...
+        :return:
+        """
         if self.size == 0:
             return False
         else:

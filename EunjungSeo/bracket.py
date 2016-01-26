@@ -1,4 +1,5 @@
-from .array_stack import ArrayStack, Empty
+from EunjungSeo.array_stack import *
+
 
 brackets = ")(()){([()])}"
 S = ArrayStack()

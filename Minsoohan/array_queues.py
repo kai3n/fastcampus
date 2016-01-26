@@ -16,12 +16,13 @@ class ArrayQueues:
         return self.data.append(num)
 
     def dequeue(self):
-     if len(self.data)!=0:
-        self.a = self.data[0]
-        self.data = self.data[1:len(self.data)]
-        return self.a
-     else :
-        return False
+        how_long=len(self.data)
+        if how_long==0:
+            return "Error"
+        else :
+            re_data = self.data[0]
+            self.data = self.data[1:len(self.data)]
+            return re_data
 
     def is_empty(self):
         if len(self.data)==0:
@@ -29,8 +30,26 @@ class ArrayQueues:
         else :
          return False
 
+
     def first(self):
           if len(self.data)==0:
             return False
           else :
               return self.data[0]
+
+
+Q = ArrayQueues()
+Q.enqueue(5)
+Q.enqueue(3)
+print(len(Q))
+print(Q.dequeue())
+print(Q.is_empty())
+print(Q.dequeue())
+print(Q.is_empty())
+print(Q.dequeue())
+Q.enqueue(7)
+Q.enqueue(9)
+print(Q.first())
+Q.enqueue(4)
+print(len(Q))
+print(Q.dequeue())

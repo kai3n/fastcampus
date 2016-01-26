@@ -22,15 +22,13 @@ class ArrayQueue:
 
        return self._size
 
-
     def first(self):
 
-      if self.size == 0:
-            raise Exception
+      if self._size == 0:
+        raise Exception
+
       else:
-
-        return self.data[0]
-
+        return self._data[0]
 
     def is_empty(self):
         if self._size == 0:
@@ -38,5 +36,4 @@ class ArrayQueue:
           return True
 
         else:
-
           return False

@@ -44,7 +44,7 @@ class LinkedList:
         else:
             node._next = None
             self._tail._next = node
-            self._tail = node
+            self._tail = node   # self._tail 을 node 로 덮어씀
             self._size += 1
 
     def remove_first(self):

@@ -16,9 +16,11 @@ class LinkedList:
 
     def print_list(self):
         probe = self._head
-        while probe is not None:
-            print(probe._element)
+        while probe is not self._tail:
+            print(probe._element,'->',end=' ')
             probe = probe.next
+        print(probe._element)
+
 
     def is_empty(self):
         return not bool(self._size)
@@ -72,19 +74,22 @@ class LinkedList:
 
 
 lst = LinkedList()
-#print(lst.is_empty()) #True
+print(lst.is_empty()) #True
 lst.add_first(1)  #1
-#print(lst.head()) #return 1
+print(lst.head()) #return 1
 lst.add_first(2)  #2->1
 lst.add_first(3)  #3->2->1
 #print(lst.tail()) #return 1
+lst.print_list()
 lst.add_last(4)  #3->2->1->4
 lst.add_last(5)  #3->2->1->4->5
 lst.add_last(6)  #3->2->1->4->5->6
 lst.print_list()
-lst.remove_first()  #2->1->4->5->6
 
+lst.remove_first()  #2->1->4->5->6
 lst.remove_last()  #2->1->4->5
-lst.print_list()  #2->1->4->5
+lst.print_list()
+
+#lst.print_list()  #2->1->4->5
 #print(lst.is_empty()) #False
-len(lst)  #return 4
+print(len(lst))  #return 4

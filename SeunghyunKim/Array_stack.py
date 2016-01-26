@@ -12,9 +12,9 @@ class ArrayStack:
         return len(x)
     def is_empty(x):
         if x!=0:
-            return True
-        else:
             return False
+        else:
+            return True
     def push(x, e):
         x.append(e)
     def top(x):

@@ -38,4 +38,3 @@ class ArrayQueue:
 
     def enqueue(self, x):
         self.append(x)
-

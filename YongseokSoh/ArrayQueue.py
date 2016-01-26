@@ -25,7 +25,6 @@ class ArrayQueue:
             self._data = self._data[1:]
             return result
 
-
     def first(self):
         if self.is_empty():
             raise Empty('Queue is empty')

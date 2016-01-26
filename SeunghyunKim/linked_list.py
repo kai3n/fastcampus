@@ -1,6 +1,6 @@
 class Linkedlist:
 
-    class Node:
+    class _Node:
 
         def __init__(self, element, next):
             self._element = element
@@ -23,27 +23,31 @@ class Linkedlist:
 
     def add_first(self, e):
 
-        x = self.Node(e, None)
+        x = self._Node(e, None)
 
-        if (self._head == None):
+        if (self._size == 0):
             self._head = e
             self._tail = e
         else:
             x._next = self._head
-            self._head = x._element
-
-        self._size += 1
+            self._head = x
+            self._size += 1
 
     def add_last(self, e):
 
-        x = self.Node(e, None)
+        x = self._Node(e, None)
 
-        if (self._head == None) :
+        if (self._size == 0) :
+            self.add_first(e)
+        else:
+            self._tail._next = x
+            self._tail = x
+            self._size += 1
 
 
     def remove_first(self):
-        self._head = Linkedlist.Node(self._head._next)
-        self.size -= 1
+        self._head = self._head._next
+        self._size -= 1
 
     def remove_last(self):
         pass
@@ -58,11 +62,13 @@ class Linkedlist:
         pass
 
 lst = Linkedlist()
-print(lst.is_empty())
+print(lst.is_empty()) #Ture
 lst.add_first(1)
-print(lst.head())
+print(lst.head())   #1
 lst.add_first(2)
-print(lst.head())
+print(lst.head())   #2
 lst.add_first(3)
-print(lst.head())
-print(lst.tail())
+print(lst.head())   #3
+print(lst.tail())   #1
+lst.add_last(4)
+print(lst.tail())   #4

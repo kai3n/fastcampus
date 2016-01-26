@@ -14,6 +14,7 @@ class ArrayQueue:
         return len(self._data)
 
     def is_empty(self):
+        #return len(self._data) is 0 만 해도 된다
         if len(self._data) <= 0:
             return True
         else:
@@ -31,8 +32,15 @@ class ArrayQueue:
             f_num = self._data[0]
             del self._data[0]
         return f_num
+        """
+        else:
+            result = self._data[0]
+            self._data = self._data[1:]
+            return result
+        """
 
     def enqueue(self, e):
-        return self._data.insert(self._data[-1], e)
+        self._data.insert(self._data[-1], e) #self._data.append(e)
+
 
 

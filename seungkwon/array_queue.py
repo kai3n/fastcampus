@@ -15,14 +15,13 @@ class array_queue():
         self.size += 1
 
     def dequeue(self):
-        res = array_queue()
         try:
             res = self.data[0]
             del self.data[0]
+            self.size -= 1
+            return res
         except:
             raise Empty
-        self.size -= 1
-        return res
 
     def first(self):
         if self.size == 0:
@@ -32,9 +31,9 @@ class array_queue():
 
     def is_empty(self):
         if self.size == 0:
-            return False
-        else:
             return True
+        else:
+            return False
 
 mQueue = array_queue()
 print(mQueue.is_empty())

@@ -35,9 +35,11 @@ class Linkedlist:
         self._size += 1
 
     def add_last(self, e):
-        Linkedlist.Node(self._head._next, e)
-        self._tail = e
-        self.size += 1
+
+        x = self.Node(e, None)
+
+        if (self._head == None) :
+
 
     def remove_first(self):
         self._head = Linkedlist.Node(self._head._next)

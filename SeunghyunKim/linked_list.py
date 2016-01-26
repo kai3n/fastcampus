@@ -10,7 +10,7 @@ class Linkedlist:
 
         self._head = None
         self._tail = None
-        self.size = 0
+        self._size = 0
 
     def __len__(self):
         return len(self)
@@ -22,15 +22,30 @@ class Linkedlist:
             return False
 
     def add_first(self, e):
-        pass
+
+        x = self.Node(e, None)
+
+        if (self._head == None):
+            self._head = e
+            self._tail = e
+        else:
+            x._next = self._head
+            self._head = x._element
+
+        self._size += 1
 
     def add_last(self, e):
-        pass
 
-    def remove_first(self, e):
-        pass
+        x = self.Node(e, None)
 
-    def remove_last(self, e):
+        if (self._head == None) :
+
+
+    def remove_first(self):
+        self._head = Linkedlist.Node(self._head._next)
+        self.size -= 1
+
+    def remove_last(self):
         pass
 
     def head(self):
@@ -38,3 +53,16 @@ class Linkedlist:
 
     def tail(self):
         return self._tail
+
+    def print_list(self):
+        pass
+
+lst = Linkedlist()
+print(lst.is_empty())
+lst.add_first(1)
+print(lst.head())
+lst.add_first(2)
+print(lst.head())
+lst.add_first(3)
+print(lst.head())
+print(lst.tail())

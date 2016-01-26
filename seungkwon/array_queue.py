@@ -15,14 +15,13 @@ class array_queue():
         self.size += 1
 
     def dequeue(self):
-        res = array_queue()
         try:
             res = self.data[0]
             del self.data[0]
+            self.size -= 1
+            return res
         except:
             raise Empty
-        self.size -= 1
-        return res
 
     def first(self):
         if self.size == 0:
@@ -51,3 +50,9 @@ print(mQueue.is_empty())
 print(len(mQueue))
 mQueue.dequeue()
 print(mQueue.first())
+
+def firstOperationCharacter(expr):
+
+    return exec(expr)
+
+print("-- n",firstOperationCharacter("(2 + 2) * 2"))

@@ -4,7 +4,7 @@ class Empty(Exception):
 class ArrayQueue:
 
     def __init__(self):
-        self._data = [None]
+        self._data = []
 
     def __len__(self):
         return len(self._data)
@@ -25,7 +25,7 @@ class ArrayQueue:
         if self.is_empty() == True:
             print('Error')
         else:
-            a = self.first()
+            a = self._data[0]
             self._data = self._data[1:]
             return a
 
@@ -34,9 +34,5 @@ class ArrayQueue:
 
 s = ArrayQueue()
 
-s.enqueue(2)
-s.enqueue(3)
-s.enqueue(6)
 
-s.dequeue()
 print(s._data)

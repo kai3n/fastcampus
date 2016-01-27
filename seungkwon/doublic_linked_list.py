@@ -150,5 +150,5 @@ lst.remove_last()  #2->1->4->5
 print("---------")
 lst.print_list() #2->1->4->5
 print("---------")
-# print(lst.is_empty()) #False
-# print(len(lst))  #return 4
+print(lst.is_empty()) #False
+print(len(lst))  #return 4

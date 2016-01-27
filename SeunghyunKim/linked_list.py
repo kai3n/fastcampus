@@ -52,8 +52,11 @@ class LinkedList:
             print ("error")
         else:
             n = self._size
-            for i in range(1, n-1):
-                tail = self._head._next
+            temp = []
+            for i in range(n):
+                temp[0] = self._head
+                temp[i] = temp[i-1]._next
+                tail = temp[n-1]
             self._tail = tail
             self._size -= 1
 
@@ -68,20 +71,20 @@ class LinkedList:
 
 lst = LinkedList()
 print(lst.is_empty()) #True
-lst.add_first(1)
-print(lst.head())   #1
-lst.add_first(2)    #2>1
+lst.add_first(100)
+print(lst.head())   #100
+lst.add_first(2)    #2>100
 print(lst.head())   #2
-print(lst.tail())   #1
-lst.add_first(3)    #3>2>1
-print(lst.head())   #3
-print(lst.tail())   #1
-lst.add_last(7)     #3>2>1>7
-print(lst.tail())   #7
+print(lst.tail())   #100
+lst.add_first(30)   #30>2>100
+print(lst.head())   #30
+print(lst.tail())   #100
+lst.add_last(700)   #30>2>100>700
+print(lst.tail())   #700
 print(lst.__len__())#4
-lst.remove_last()   #3>2>1
-print(lst.head())   #3
-print(lst.tail())   #1
+lst.remove_last()   #30>2>100
+print(lst.head())   #30
+print(lst.tail())   #100
 print(lst.__len__())#3
 # lst.add_last(4)
 # print(lst.tail())   #4

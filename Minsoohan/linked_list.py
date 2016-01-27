@@ -1,72 +1,122 @@
-class Linkedlist :
+class Empty(Exception):
+    pass
 
-    class _Node:
+class LinkedList :
 
-        def __init__(self, element, next=None):
-            self._element = element
-            self._next = next
+    class _Node:#리스트 내에 선언된 '노드'를 만들어 내는 내부 클래스'
+        #이것이 있음으로써 링크스택 클래스 내부에서 특정하게 쓰이는 클래스가 선언된 것이라고 볼 수 있다.
+
+        def __init__(self, element, next=None, prev=None):
+            self._element = element#노드는 정보값과
+            self._next = next#다음 노드를 가르키는 값을 갖는다.
+            self._prev = prev
 
     def __init__(self):
-        self._head=None
-        self._size =0
-        self._tail =None
-
+        self._head=None#링크드리스트 속 클래스 안에는 머릿부분을 가르키는 머릿값이 들어있다.
+        self._size =0#이 리스트의 크기가 얼마인지도 알아야하기 때문에
+        self._tail =None# 꼬릿값도 필요하다.
 
     def __len__(self):
         return self._size
+    def print_list(self):
+        probe = self._head
+        while probe is not self._tail:
+            print(probe._element,'<->',end=' ')
+            probe = probe._next
+        print(probe._element)
 
     def is_empty(self):
-        if self._head==None:
+        if self._size == 0:
             return True
         else :
             return False
 
+
+
     def add_first(self, element):
-        n1 = self._Node(element)#add를 해줄 때마다 노드를 새로 만들어야 하기 때문에
-        #add_first함수에 노드 인스턴스를 만들어준다.
-        if self._head==None:#만약에 클래스 안의 헤드값에 아무것도 없을 경우
-            self._head=n1#지금 만든 노드를 헤드로 만들어버린다.
-            self._tail=n1#혹시나 tail부분에 데이터를 붙여야 할 수도 있으니까 tail로도 설정해준다.
+        node = self._Node(element)
+        #노드에 새로운 값을 넣어주고
+        if self._size == 0:#만약에 링크드리스트 안에 아무런 노드도 없을 경우에는
+            self._head = node#머릿값에다가 새로 만든 노드를 넣어준다.
+            self._tail = node#꼬릿값도 마찬가지다 어짜피 리스트 안에 노드가 한 개밖에 없어서 머리도, 꼬리도 된다.
+            self._size+=1
+        else:
+            self._head._prev = node#머릿값의 이전 값을 노드로 선언
+            node._next = self._head#
+            self._head = node
             self._size+=1
 
-        else :#만약에 헤드가 이미 있을 경우에는 이미 있는 노드의 헤드를 지금만든 걸로 뺏어와야한다.
-            n1._next=self._head#현재 있는 헤드를 n1노드의 다음부분으로 만들어버린다.
-            self._head = n1#헤드를 새로 선언해준다.
-            self._size+=1#전체 사이즈를 1 늘린다.
+
 
     def add_last(self, element):
-        n1=self._Node(element)#새로운 노드 설정
-        if self._head==None:#만약에 클래스 안에 헤드값에 아무것도 없을경우
-            self._head=n1
-            self._tail=n1
+        node = self._Node(element)
+        #노드에 새로운 값을 넣어주고
+        if self._size == 0:
+            self._head = node#머릿값에 새로운 노드를 넣어줌
+            self._tail = node#꼬리도 마찬가지
             self._size+=1
-        else :#뭔가 있을 경우
-            n1._next=None
-            self._tail.next=n1
-            self._tail=n1
+        else :
+            node._next = None
+            node._prev =  self._tail
+            self._tail._next = node#꼬리 부분에 있는 노드의 next는 새로 만든 노드!
+            self._tail = node#이제 부터 꼬리는 새로만든 노드임
             self._size+=1
+
+    # def add_between(self, element, between_first_num):
+    #     node = self._Node(element)
+    #     check_serch = self._head
+    #
+    #     while(check_serch._element != between_first_num):
+    #         check_serch = check_serch.next
+    #
+    #     check_serch = check_serch.next
 
     def remove_first(self):
-        if self._head==None:
-            return print("리스트에 아무것도 존재 하지 않습니다.")
-
-        else :
+        if self._size==0:
+            print("error")
+        else:
             self._head = self._head._next
+            del(self._head._prev)
             self._size-=1
 
     def remove_last(self):
+        if(self._size == 0):
+            raise("error")
 
-        if self._head==None:
-            return print("리스트에 아무것도 존재하지 않습니다.")
+        elif(self._size == 1):
+            self.remove_first()
+
         else:
-            self._tail = self._tail._next
+            self._tail = self._tail._prev
+            del(self._tail._next)
             self._size-=1
 
+    def head(self):
+        return self._head._element
+    def tail(self):
+        return self._tail._element
 
-L=Linkedlist()
+lst = LinkedList()
+print(lst.is_empty()) #True
+#print(lst.tail()) #return 1
 
-print(L.is_empty())
+lst.add_first(1)  #1
+print(lst.head()) #return 1
+lst.add_first(2)  #2->1
+lst.add_first(3)  #3->2->1
+lst.print_list()
 
-L.remove_first()
+#print(lst.tail()) #return 1
+lst.print_list()
+lst.add_last(4)  #3->2->1->4
+lst.add_last(5)  #3->2->1->4->5
+lst.add_last(6)  #3->2->1->4->5->6
+lst.print_list()
 
+lst.remove_first()  #2->1->4->5->6
+lst.remove_last()  #2->1->4->5
+lst.print_list()
 
+#lst.print_list()  #2->1->4->5
+#print(lst.is_empty()) #False
+print(len(lst))  #return 4

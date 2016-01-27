@@ -1,7 +1,7 @@
 class Empty(Exception):
     pass
 
-class ArrayStack:
+class ArrayList:
 
     def __init__(self):
         self.data = []
@@ -37,7 +37,7 @@ class ArrayStack:
             return pop_data
 
 
-# S = ArrayStack()
+# S = ArrayList()
 #
 # S.push(5)
 #

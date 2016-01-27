@@ -89,8 +89,23 @@ class DoublyLinkedList:
     def insert_between(self, element, predecessor, successor):
         pass
 
+    def search_node(self, node):
+        probe = self._head
+        while(probe._element is not node): # searching process
+            if probe._next is None: # when searched through whole list
+                print("No such node with given value : {}".format(node))
+                return None
+            else:
+                probe = probe._next
+        return probe
+
     def delete_node(self, node):
-        pass
+        del_node = self.search_node(node)
+        if del_node:
+            del_node._prev._next = del_node._next
+            del_node._next._prev = del_node._prev
+            del del_node
+            self._size -= 1
 
     def head(self):
         return self._head._element
@@ -139,6 +154,13 @@ lst.remove_first()
 lst.remove_first()
 lst.add_first(12)
 lst.add_first(13)
+lst.add_first(14)
+lst.add_last(15)
+lst.print_list()
+lst.delete_node(12)
+lst.delete_node(13)
+lst.delete_node(20)
+
 lst.print_list()
 
 print(lst.is_empty()) #True

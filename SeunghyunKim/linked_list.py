@@ -51,9 +51,8 @@ class LinkedList:
         if self._size == 0:
             print ("error")
         else:
-            n = self._size
             temp = self._head
-            while temp != self._tail:
+            while temp._next != self._tail:
                 temp = temp._next
                 tail = temp
             self._tail = tail
@@ -66,7 +65,10 @@ class LinkedList:
         return self._tail._element
 
     def print_list(self):
-        pass
+        temp = self._head
+        while temp != self._tail:
+            print(temp)
+            temp = temp._next
 
 lst = LinkedList()
 print(lst.is_empty()) #True
@@ -85,12 +87,4 @@ lst.remove_last()   #30>2>100
 print(lst.head())   #30
 print(lst.tail())   #100
 print(lst.__len__())#3
-# lst.add_last(4)
-# print(lst.tail())   #4
-# lst.add_last(5)     #3->2->1->4->5
-# lst.add_last(6)     #3->2->1->4->5->6
-# lst.remove_first()  #2->1->4->5->6
-# lst.remove_last()   #2->1->4->5
-# lst.print_list()    #2->1->4->5
-# print(lst.is_empty()) #False
-# len(lst)            #return 4
+print(lst.print_list()) #30>2>100

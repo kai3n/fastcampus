@@ -1,36 +1,44 @@
-class Linkedlist:
+class LinkedList:
 
-    class Node:
+    class _Node:
 
         def __init__(self, element, next):
             self._element = element
             self._next = next
 
     def __init__(self):
-
         self._head = None
         self._tail = None
-        self.size = 0
+        self._size = 0
 
     def __len__(self):
-        return len(self)
+        return self._size
 
     def is_empty(self):
+
         if self._size == 0:
             return True
         else:
             return False
 
     def add_first(self, e):
-        pass
+
+        if self._size == 0:
+            self._head = e
+            self._tail = e
+        else:
+            x = self._Node(e, None)
+            x._next = self._head
+            self._head = x._element
+        self._size += 1
 
     def add_last(self, e):
         pass
 
-    def remove_first(self, e):
+    def remove_first(self):
         pass
 
-    def remove_last(self, e):
+    def remove_last(self):
         pass
 
     def head(self):
@@ -38,3 +46,28 @@ class Linkedlist:
 
     def tail(self):
         return self._tail
+
+    def print_list(self):
+        pass
+
+lst = LinkedList()
+print(lst.is_empty()) #True
+lst.add_first(1)
+print(lst.head())   #1
+lst.add_first(2)
+print(lst.head())   #2
+print(lst.tail())   #1
+lst.add_first(3)
+print(lst.head())   #3
+print(lst.tail())   #1
+print(lst.__len__())
+# print(lst.tail())   #1
+# lst.add_last(4)
+# print(lst.tail())   #4
+# lst.add_last(5)     #3->2->1->4->5
+# lst.add_last(6)     #3->2->1->4->5->6
+# lst.remove_first()  #2->1->4->5->6
+# lst.remove_last()   #2->1->4->5
+# lst.print_list()    #2->1->4->5
+# print(lst.is_empty()) #False
+# len(lst)            #return 4

@@ -33,6 +33,7 @@ class Doublelinkedlist:
             self._tail = new_node
         else:
             new_node = self.Node(e, None, self._head)
+            self._head._prev = new_node
 
         self._head = new_node
         self._size += 1
@@ -48,6 +49,7 @@ class Doublelinkedlist:
 
         self._tail = new_node
         self._size += 1
+
 
 
     # 노드 반환?
@@ -106,31 +108,3 @@ class Doublelinkedlist:
             element_list.append(self._tail._element)
 
         print(element_list)
-
-
-
-lst = Doublelinkedlist()
-print(lst.is_empty()) #True
-lst.add_first(1)  #1
-print(lst.head()) #return 1
-lst.add_first(2)  #2->1
-lst.add_first(3)  #3->2->1
-print(lst.tail()) #return 1
-lst.add_last(4)  #3->2->1->4
-lst.add_last(5)  #3->2->1->4->5
-lst.add_last(6)  #3->2->1->4->5->6
-lst.remove_first()  #2->1->4->5->6
-lst.remove_last()  #2->1->4->5
-lst.print_list()  #2->1->4->5
-print(lst.is_empty()) #False
-len(lst)  #return 4
-
-
-
-
-
-
-
-
-
-

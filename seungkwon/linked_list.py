@@ -5,7 +5,7 @@ class EmptyLinked(Exception):
 class MyLinkedList:
     """
     배운거 바로 복습
-    시작시간 19:30~
+    시작시간 19:30~20:00
     """
     class Node:
         def __init__(self, element, next):
@@ -139,12 +139,6 @@ lst.print_list() #2->1->4->5
 print("---------")
 print(lst.is_empty()) #False
 print(len(lst))  #return 4
-
-
-
-
-
-
 
 
 

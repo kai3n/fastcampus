@@ -66,8 +66,8 @@ class LinkedList:
 
     def print_list(self):
         temp = self._head
-        while temp != self._tail:
-            print(temp)
+        while temp != None:
+            print(temp._element, "->" , end = " ")
             temp = temp._next
 
 lst = LinkedList()

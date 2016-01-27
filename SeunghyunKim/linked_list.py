@@ -52,11 +52,10 @@ class LinkedList:
             print ("error")
         else:
             n = self._size
-            temp = []
-            for i in range(n):
-                temp[0] = self._head
-                temp[i] = temp[i-1]._next
-                tail = temp[n-1]
+            temp = self._head
+            while temp != self._tail:
+                temp = temp._next
+                tail = temp
             self._tail = tail
             self._size -= 1
 

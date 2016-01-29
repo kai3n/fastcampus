@@ -1,4 +1,4 @@
-input = "xxwbwxbwwwxwxwwwbbwxxwbbwwbxbwwwb"
+#input = "xxwbwxbwwwxwxwwwbbwxxwbbwwbxbwwwb"
 
 def mca(input):
     output = ""
@@ -19,4 +19,14 @@ def mca(input):
         end += 1
     return output
 
-print(mca(input))
+#print(mca(input))
+
+num = int(input())  # 정점 개수 입력
+matrix = [[0 for k in range(num)] for i in range(num)]  # 빈 2차원 배열 선언
+
+for i in range(num):
+    line = input().split()
+    for j, val in enumerate(line):
+        matrix[i][j] = int(val)
+print(matrix)
+

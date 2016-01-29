@@ -39,17 +39,63 @@ class makeStack():
 
         return self.newstack[self.size-1]
 
-mStack = makeStack()
-mStack.push(5)
-mStack.push(3)
-mStack.push(3)
-mStack.push(3)
-mStack.pop()
-print("ddd----------r",len(mStack))
-print("len",mStack.__len__)
-print(mStack.is_empty())
-print (mStack)
+    def checkPa(self, string):
+        for a in string:
+            if a == "(" or a == "{" or a == "[":
+                self.push(a)
+            elif a != "(" and a != "{" and a != "[":
+                # 숫자, 연산자가 들어왔을때
+                dep = len(self)
 
+            elif self.is_empty(): #비어있지 않음
+                if self.top() == "(" and a == ")":
+                    self.pop()
+                elif self.top() == "{" and a == "}":
+                    self.pop()
+                elif self.top() == "[" and a == "]":
+                    self.pop()
+            else:
+                # 처음 ), }, ] 가 왔을때 바로 입력부터 해준다
+                self.push(a)
+            print(self.newstack)
+
+        if len(self) == 0:
+            return True
+        else:
+            return False
+
+
+    def confirmDepth(self, string):
+        res = dict()
+        num =list()
+        for a in string:
+            if a == "(" :
+                self.push(a)
+            elif a != "("  and a !=")":
+                # # 숫자, 연산자가 들어왔을때
+                # dep = len(self)
+                # num.append(a)
+                # res[dep] = num
+                # print("---",res)
+                self.push(a)
+
+            elif self.is_empty(): #비어있지 않음
+                if self.top() == ")":
+                    for st in self.newstack:
+                        num.append(self.pop())
+
+                if self.top() == "(" and a == ")":
+                    self.pop()
+
+            else:
+                # 처음 ), }, ] 가 왔을때 바로 입력부터 해준다
+                self.push(a)
+            print()
+        print(self.newstack)
+        if len(self) == 0:
+            return True
+        else:
+            return False
 
 
 class stack_custom():
@@ -104,27 +150,27 @@ class stack_custom():
 # print(mStack.is_empty())
 # print (mStack._data)
 # print(len(mStack._data))
-
-fir = "()(()){([])}"
-sec = "((()(()){([)])}))"
-third = ")(()){([])}"
-
-for a in third:
-    if a == "(" or a == "{" or a == "[":
-        mStack.push(a)
-    elif mStack.is_empty():
-        if mStack.top() == "(" and a == ")":
-            mStack.pop()
-        elif mStack.top() == "{" and a == "}":
-            mStack.pop()
-        elif mStack.top() == "[" and a == "]":
-            mStack.pop()
-    else:
-        # 처음 ), }, ] 가 왔을때 바로 입력부터 해준다
-        mStack.push(a)
-    print(mStack.newstack)
-
-if len(mStack) == 0:
-    print(True)
-else:
-    print(False)
+#
+# fir = "()(()){([])}"
+# sec = "((()(()){([)])}))"
+# third = ")(()){([])}"
+#
+# for a in third:
+#     if a == "(" or a == "{" or a == "[":
+#         mStack.push(a)
+#     elif mStack.is_empty():
+#         if mStack.top() == "(" and a == ")":
+#             mStack.pop()
+#         elif mStack.top() == "{" and a == "}":
+#             mStack.pop()
+#         elif mStack.top() == "[" and a == "]":
+#             mStack.pop()
+#     else:
+#         # 처음 ), }, ] 가 왔을때 바로 입력부터 해준다
+#         mStack.push(a)
+#     print(mStack.newstack)
+#
+# if len(mStack) == 0:
+#     print(True)
+# else:
+#     print(False)

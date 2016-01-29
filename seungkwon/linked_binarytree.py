@@ -1,3 +1,6 @@
+from Seungkwon.array_stack import makeStack
+#--------------------- 강사님이 제공한 코드 ----------------------------
+
 class Empty(Exception):
     pass
 
@@ -212,7 +215,7 @@ class BinaryTree(Tree):
     raise NotImplementedError('must be implemented by subclass')
 
   # ---------- concrete methods implemented in this class ----------
-  def sibling(self, p):
+  def sibling(self, p): # 형제를 알려주는 메소드
     """Return a Position representing p's sibling (or None if no sibling)."""
     parent = self.parent(p)
     if parent is None:                    # p must be the root
@@ -296,6 +299,7 @@ class LinkedBinaryTree(BinaryTree):
   def _make_position(self, node):
     """Return Position instance for given node (or None if no node)."""
     return self.Position(self, node) if node is not None else None
+    # if node가 None이면  앞을 리턴하고 else이면 None을 리턴해라
 
   #-------------------------- binary tree constructor --------------------------
   def __init__(self):
@@ -443,6 +447,12 @@ if __name__ == "__main__":
     i = tree._add_left(h, 4)
 
     print("Start ->", end="")
-    for a in tree.preorder():
+    for a in tree.inorder():
         print(str(a._node._element) + " -> ", end="")
     print("Finish")
+
+# 연산자가 두개인경우에는 반드시 괄호로 묵는다
+num = "((((3+1)*3)/((9-5)+2))-((3*(7-4))+6))"
+de = makeStack()
+print(de.confirmDepth(num))
+# a = (  (((3+1)*3)/((9-5)+2))  -  ((3*(7-4))+6)  )

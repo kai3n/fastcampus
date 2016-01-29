@@ -160,7 +160,9 @@ lst.print_list()
 lst.delete_node(12)
 lst.delete_node(13)
 lst.delete_node(20)
-
+lst.delete_node(20)
+lst.print_list()
+lst.delete_node(15)
 lst.print_list()
 
 print(lst.is_empty()) #True

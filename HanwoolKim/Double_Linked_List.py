@@ -90,7 +90,31 @@ class Doubly_Linked_List:
             temp = temp._next
 
 
+    def search(self, e):
+        search_for_node = self._node(e)
+        temp = self._head
 
+        while(temp != None):
+            if(temp._element == search_for_node._element):
+                return temp
+            temp = temp._next
+
+    def remove_Node(self, e):
+        node_for_delete = self.search(self._node(e))
+        print("what is" + node_for_delete)
+
+        if(node_for_delete == self._head):
+            self.remove_First()
+
+        elif(node_for_delete == self._tail):
+            self.remove_Last()
+
+        # else:
+        #     prev_node = node_for_delete._prev
+        #     next_node = node_for_delete._next
+        #     prev_node._next = next_node
+        #     next_node._prev = prev_node._prev
+        #     node_for_delete = None
 
 dll = Doubly_Linked_List()
 dll.add_First(10)
@@ -109,5 +133,13 @@ dll.remove_Last()
 dll.print_List()
 dll.remove_Last()
 dll.print_List()
-
+dll.add_First(40)
+dll.add_First(50)
+dll.print_List()
+dll.add_Last(100)
+dll.add_Last(60)
+dll.print_List()
+print(dll.search(40)._element, "hello")
+#dll.remove_Node(40)
+dll.print_List()
 

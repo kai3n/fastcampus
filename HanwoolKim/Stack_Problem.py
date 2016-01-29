@@ -7,6 +7,8 @@ def pair(str):
         else:
             if((st[-1] == '(' and s == ')') or ((st[-1] == '[' and s == ']')) or ((st[-1] == '{' and s == '}'))):
                 st.pop()
+            else:
+                print(False)
 
     if (len(st) == 0):
         print(True)

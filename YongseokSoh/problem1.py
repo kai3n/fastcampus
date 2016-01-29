@@ -31,7 +31,7 @@
 # 0.333
 # 0.909
 
-string = "xxxxxxxxxxxxxxxxwwwwwwwwwwwbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbwww"
+string = "gkkkkttttttttttttbbbblllllllllllllpppppppppppppppggggggdddiyyyyyyggggggggggdddddxxxxxxxxxxxxxxxxff"
 
 #string = "x"
 #string = "xxxwbbwww"
@@ -42,8 +42,6 @@ string = "xxxxxxxxxxxxxxxxwwwwwwwwwwwbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbwww"
 #0.778
 #0.333
 #0.909
-
-
 
 def mca_algorithm(string):
     mca = '' # to store answer

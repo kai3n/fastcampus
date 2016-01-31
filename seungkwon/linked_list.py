@@ -243,10 +243,11 @@ class LinkedStack:
         :return:
         """
         cur = self._head
-        while cur._next:
+        while cur._next:  #여기에선 트룬지 폴슨지만 확인   #와일이 트루일때까지 계속 루프돔
             print(cur._element)
-            cur = cur._next
+            cur = cur._next      #기존에 커텐ㅌ 는 커렌트가 가르키는 값이다. 즉 다음꺼 계속 보여달란거
         print(cur._element)
+        self._head._next._next._next._next._element
 
     def head(self):
         return self._head._element
@@ -256,23 +257,23 @@ class LinkedStack:
 
     def is_empty(self):
         return self._head is None
-#
-# lst = LinkedStack()
-# print(lst.is_empty(), True) #True
-# lst.add_first(1)  #1
-# print(lst.head(), 1) #return 1
-# lst.add_first(2)  #2->1
-# lst.add_first(3) #3->2->1
-# print("---------")
-# lst.print_list()
-# print("---------")
-#
-# print("ttt",lst.tail(), 1) #return 1
-# lst.add_last(4)  #3->2->1->4
-# lst.add_last(5)  #3->2->1->4->5
-# lst.add_last(6)  #3->2->1->4->5->6
-# lst.remove_first()  #2->1->4->5->6
-# lst.remove_last()  #2->1->4->5
-# lst.print_list()  #2->1->4->5
-# print(lst.is_empty()) #False
-# print(len(lst))  #return 4
+
+lst = LinkedStack()
+print(lst.is_empty(), True) #True
+lst.add_first(1)  #1
+print(lst.head(), 1) #return 1
+lst.add_first(2)  #2->1
+lst.add_first(3) #3->2->1
+print("---------")
+lst.print_list()
+print("---------")
+
+print("ttt",lst.tail(), 1) #return 1
+lst.add_last(4)  #3->2->1->4
+lst.add_last(5)  #3->2->1->4->5
+lst.add_last(6)  #3->2->1->4->5->6
+lst.remove_first()  #2->1->4->5->6
+lst.remove_last()  #2->1->4->5
+lst.print_list()  #2->1->4->5
+print(lst.is_empty()) #False
+print(len(lst))  #return 4

@@ -46,7 +46,7 @@ class custom_stack():
 mystack = custom_stack()
 
 
-print(len(mystack))
+print(mystack.top())
 # mystack.push(1)
 # mystack.push(2)
 # print(mystack.top())

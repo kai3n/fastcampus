@@ -342,6 +342,7 @@ class LinkedBinaryTree(BinaryTree):
     """Place element e at the root of an empty tree and return new Position.
 
     Raise ValueError if tree nonempty.
+    :rtype: object
     """
     if self._root is not None:
       raise ValueError('Root exists')

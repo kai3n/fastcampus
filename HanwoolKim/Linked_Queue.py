@@ -2,7 +2,7 @@ class Empty(Exception):
     pass
 
 
-class LinkedList:
+class Linked_Queue:
 
     class _Node:
         def __init__(self, element):
@@ -23,9 +23,7 @@ class LinkedList:
         else:
             return False
 
-    def add_first(self, num):
-
-        e = self._Node(num)
+    def add_first(self, e):
 
         if (self._head == None):
             self._head = e
@@ -36,7 +34,7 @@ class LinkedList:
 
         self._size+=1
 
-    def add_last(self, num):
+    def enqueue(self, num):
 
         e = self._Node(num)
         if(self._size == 0):
@@ -47,7 +45,7 @@ class LinkedList:
             self._tail = e
             self._size+= 1
 
-    def remove_first(self):
+    def dequeue(self):
         if(self._size == 0):
             raise("error")
 
@@ -84,30 +82,21 @@ class LinkedList:
     def print_list(self):
 
         temp = self._head
+        if temp == None:
+            print("empty")
 
         while(temp != None):
             if(temp._next == None):
                 print(temp._element)
                 break
-            print(temp._element, "->", end = " ")
+            print(temp._element, "-> ", end = " ")
             temp = temp._next
 
 
-lst = LinkedList()
-lst.add_first(1)
-lst.add_first(2)
-lst.add_first(3)
-lst.add_first(4)
-lst.add_first(5)
-lst.remove_first()
-lst.remove_first()
-lst.remove_first()
-lst.add_last(10)
-lst.add_last(15)
-lst.remove_last()
-lst.remove_last()
-lst.remove_last()
-
-lst.print_list()
-print(len(lst))
+q = Linked_Queue()
+q.enqueue(10)
+q.enqueue(15)
+q.print_list()
+q.dequeue()
+q.print_list()
 

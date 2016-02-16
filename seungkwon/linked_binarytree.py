@@ -451,8 +451,84 @@ if __name__ == "__main__":
         print(str(a._node._element) + " -> ", end="")
     print("Finish")
 
-# 연산자가 두개인경우에는 반드시 괄호로 묵는다
-num = "((((3+1)*3)/((9-5)+2))-((3*(7-4))+6))"
 de = makeStack()
-print(de.confirmDepth(num))
-# a = (  (((3+1)*3)/((9-5)+2))  -  ((3*(7-4))+6)  )
+# 연산자가 두개인경우에는 반드시 괄호로 묵는다
+def inorder_to_postorder(exp):
+  #inorder -> post로 바꾼다
+
+    operator = "+-*/()"                     # 연산자들을 선언
+    result = list()                     # 후위 표기법으로 결과가 저장되는 리스트
+    stack = list()                      # list를 스택으로 사용함.
+
+    for symbol in exp:
+        if symbol not in operator:          # 숫자일 경우 바로 결과리스트에 넣는다.
+            result.append(symbol)
+        else:
+            if symbol in "+-*/":        # 더하기, 빼기, 곱하기, 나누기 연산자일 경우
+                stack.append(symbol)    # 후위 표기법으로 변환하기 위하여 우선 별도 스택에 임시로 저장.
+            elif symbol == ")":         # 닫는 괄호 ) 일 경우 저장해 연산자 하나를 결과리스트에 추가한다.
+                result.append(stack.pop())      # 이 때 pop()을 통해 스택을 하나 비운다.
+
+    while len(stack) != 0:              # 스택에 남아 있는 연산자들을 pop()으로 하나씩 결과리스트에 붙여주면
+        result.append(stack.pop())      # 중위 표기법에서 후위 표기법으로 변환 완료!
+    return ''.join(result)
+
+num = "((((3+1)*3)/((9-5)+2))-((3*(7-4))+6))"
+postorder = inorder_to_postorder(num) #31+3*95-2+/374-*6+-
+reverse = postorder[::-1]
+# print("결과",postorder)
+# print("거꾸로",reverse)
+#---- 1/27
+
+
+def calculate(postorder_num):
+  """
+  1. postorder로 들어온 숫자로 계산한다.
+  2. 두개의 스택을 선언
+  3. 하나는 숫자 하나는 연산자
+  4. 각 연산자에 맞는 계산을 실행해야 함
+  5. 숫자가 2개, 연산자 1개 이면 연산을 실행한다
+  :param postorder_num:
+  :return:
+  """
+  num = makeStack()
+  opp = makeStack()
+  for n in postorder_num:
+    if n.isdigit():#0~9 10진수
+      num.push(int(n))
+    else:
+      opp.push(n) # 무조건 1이다 그러니깐 필요 없다
+      print(len(opp))
+
+    if len(num) >= 2 and len(opp) >= 1:
+      b = num.pop()
+      a = num.pop()
+      op = opp.pop()
+      if op == "+":
+        num.push(a+b)
+      elif op == "-":
+        num.push(a-b)
+      elif op == "*":
+        num.push(a*b)
+      elif op == "/":
+        num.push(a/b)
+      # print(a, b, op)
+  return int(num.pop())
+
+# print(calculate(postorder))
+
+
+
+def rectangle(n):
+  res = list()
+  for num in range(1, n*n):
+    if num % n == 0:
+      res.append(num)
+    else :
+      res.append(0)
+  return res
+
+
+rectangle(4)
+
+
